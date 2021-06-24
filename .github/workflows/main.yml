@@ -20,11 +20,6 @@ jobs:
         run: |
           set -e
           npm install
-          
-      - name: Run scss
-        run: |
-          set -e
-          npm run scss
       
       - name: Publish to Wikipedia
         run: |
