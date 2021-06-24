@@ -1,0 +1,209 @@
+{
+    "structure": {
+        "name": "Tutorial",
+        "page": "Wikipedia:Tutorial",
+        "children": [
+            {
+                "name": "Benutzer",
+                "page": "Wikipedia:Tutorial/Benutzer",
+                "all": "Wikipedia:Tutorial/Benutzer/alles",
+                "children": [
+                    {
+                        "name": "Benutzerkonto",
+                        "page": "Wikipedia:Tutorial/Benutzer/Benutzerkonto"
+                    },
+                    {
+                        "name": "Einstellungen",
+                        "page": "Wikipedia:Tutorial/Benutzer/Einstellungen"
+                    },
+                    {
+                        "name": "Benutzerseite",
+                        "page": "Wikipedia:Tutorial/Benutzer/Benutzerseite"
+                    },
+                    {
+                        "name": "Ausblick",
+                        "page": "Wikipedia:Tutorial/Benutzer/Ausblick"
+                    }
+                ]
+            },
+            {
+                "name": "Kommunikation",
+                "subTitle": "Menschen und Gemeinschaft",
+                "page": "Wikipedia:Tutorial/Kommunikation",
+                "all": "Wikipedia:Tutorial/Kommunikation/alles",
+                "children": [
+                    {
+                        "name": "Diskussionsseiten",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Diskussionsseiten"
+                    },
+                    {
+                        "name": "Echo und Danke",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Echo und Danke"
+                    },
+                    {
+                        "name": "E-Mail",
+                        "page": "Wikipedia:Tutorial/Kommunikation/E-Mail"
+                    },
+                    {
+                        "name": "Mentoren",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Mentoren"
+                    },
+                    {
+                        "name": "Treffen",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Treffen"
+                    },
+                    {
+                        "name": "Konflikt",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Konflikt"
+                    },
+                    {
+                        "name": "Ausblick",
+                        "page": "Wikipedia:Tutorial/Kommunikation/Ausblick"
+                    }
+                ]
+            },
+            {
+                "name": "Enzyklopädie",
+                "page": "Wikipedia:Tutorial/Enzyklopädie",
+                "all": "Wikipedia:Tutorial/Enzyklopädie/alles",
+                "children": [
+                    {
+                        "name": "Relevanz",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Relevanz"
+                    },
+                    {
+                        "name": "Neutralität",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Neutralität"
+                    },
+                    {
+                        "name": "Belege",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Belege"
+                    },
+                    {
+                        "name": "Verständlichkeit",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Verständlichkeit"
+                    },
+                    {
+                        "name": "Einleitung des Artikels",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Einleitung"
+                    },
+                    {
+                        "name": "Urheberrechte",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Urheberrechte"
+                    },
+                    {
+                        "name": "Recherchieren",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Recherchieren"
+                    },
+                    {
+                        "name": "Ausblick",
+                        "page": "Wikipedia:Tutorial/Enzyklopädie/Ausblick"
+                    }
+                ]
+            },
+            {
+                "name": "VisualEditor",
+                "page": "Wikipedia:Tutorial/VisualEditor",
+                "all": "Wikipedia:Tutorial/VisualEditor/alles",
+                "children": [
+                    {
+                        "name": "Seite bearbeiten",
+                        "page": "Wikipedia:Tutorial/VisualEditor/Seite bearbeiten"
+                    },
+                    {
+                        "name": "Text formatieren",
+                        "page": "Wikipedia:Tutorial/VisualEditor/Text formatieren"
+                    },
+                    {
+                        "name": "Verlinken",
+                        "page": "Wikipedia:Tutorial/VisualEditor/Verlinken"
+                    },
+                    {
+                        "name": "Veröffentlichen",
+                        "page": "Wikipedia:Tutorial/VisualEditor/Veröffentlichen"
+                    },
+                    {
+                        "name": "Zusammenfassung",
+                        "page": "Wikipedia:Tutorial/VisualEditor/Zusammenfassung"
+                    }
+                ]
+            },
+            {
+                "name": "Seiten",
+                "page": "Wikipedia:Tutorial/Seiten",
+                "all": "Wikipedia:Tutorial/Seiten/alles",
+                "children": [
+                    {
+                        "name": "Bearbeiten",
+                        "page": "Wikipedia:Tutorial/Seiten/Bearbeiten"
+                    },
+                    {
+                        "name": "Versionsgeschichte",
+                        "page": "Wikipedia:Tutorial/Seiten/Versionsgeschichte"
+                    },
+                    {
+                        "name": "Sichtung",
+                        "page": "Wikipedia:Tutorial/Seiten/Sichtung"
+                    },
+                    {
+                        "name": "Umbenennen",
+                        "page": "Wikipedia:Tutorial/Seiten/Umbenennen"
+                    },
+                    {
+                        "name": "Löschung",
+                        "page": "Wikipedia:Tutorial/Seiten/Löschung"
+                    },
+                    {
+                        "name": "Ausblick",
+                        "page": "Wikipedia:Tutorial/Seiten/Ausblick"
+                    }
+                ]
+            },
+            {
+                "name": "Neue Artikel",
+                "page": "Wikipedia:Tutorial/Neue Artikel",
+                "all": "Wikipedia:Tutorial/Neue Artikel/alles",
+                "children": [
+                    {
+                        "name": "Relevanz",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Relevanz"
+                    },
+                    {
+                        "name": "Themenwahl",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Themenwahl"
+                    },
+                    {
+                        "name": "Belegen",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Belegen"
+                    },
+                    {
+                        "name": "Entwurf",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Entwurf"
+                    },
+                    {
+                        "name": "Qualitätssicherung",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Qualitätssicherung"
+                    },
+                    {
+                        "name": "Artikellaufbahn",
+                        "page": "Wikipedia:Tutorial/Neue Artikel/Artikellaufbahn"
+                    }
+                ]
+            }
+        ]
+    },
+    "templates": {
+        "widget": "\u003Cdiv class=\"tut-nav\"\u003E\u003Cdiv class=\"tut-nav-header\"\u003E[[File:OOjs_UI_icon_academic-progressive.svg|36px|link=§§rootPage§§]]\u0026nbsp;[[§§rootPage§§|Tutorial]]\u003C/div\u003E\u003Cdiv class=\"tut-nav-content\"\u003E§§threadNavi§§\u003C/div\u003E§§pagina§§\u003C/div\u003E",
+        "threadNaviItem": "[[§§page§§|§§name§§]]",
+        "threadNaviItemActive": "[[§§page§§|\u003Cspan class=\"tut-current-item\"\u003E§§name§§\u003C/span\u003E]]",
+        "pagina": "\u003Cdiv class=\"tut-nav-pagina\"\u003E§§btnLast§§ Seite §§currentPageNo§§ von §§totalPageNo§§ §§btnNext§§ §§btnAll§§\u003C/div\u003E",
+        "paginaStart": "\u003Cdiv class=\"tut-nav-pagina\"\u003ETutorial starten §§btnNext§§ §§btnAll§§\u003C/div\u003E",
+        "paginaAll": "\u003Cdiv\u003E[[§§page§§|Einzelseiten anzeigen]]\u003C/div\u003E",
+        "btnAll": "\u003Cdiv\u003E[[§§page§§|Alles auf einer Seite]]\u003C/div\u003E",
+        "btnLast": "\u003Cspan class=\"tut-btn-last\"\u003E[[Datei:OOjs UI icon leftTriangle-progressive.svg|24px|link=§§page§§|§§name§§]]\u003C/span\u003E",
+        "btnNext": "\u003Cspan class=\"tut-btn-next\"\u003E[[Datei:OOjs UI icon rightTriangle-progressive.svg|24px|link=§§page§§|§§name§§]]\u003C/span\u003E",
+        "articleFooter": "\u003Cdiv class=\"tut-article-footer\"\u003E§§footerBtnLast§§ §§footerBtnNext§§\u003C/div\u003E",
+        "footerBtnLast": "[[§§articleLink§§|\u003Cspan class=\"mw-ui-button\"\u003EZurück zu §§articleName§§\u003C/span\u003E]]",
+        "footerBtnNext": "[[§§articleLink§§|\u003Cspan class=\"mw-ui-button mw-ui-progressive\"\u003EWeiter mit §§articleName§§\u003C/span\u003E]]"
+    }
+}

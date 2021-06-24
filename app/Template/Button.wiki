@@ -1,0 +1,4 @@
+{{#if:{{{external|}}} 
+  | <div class="plainlinks glam-button">[{{{link|:c:}}} <span class="mw-ui-button mw-ui-progressive">{{{text}}}</span>]</div> 
+  | <div class="plainlinks glam-button">[[{{{link|:c:}}}|<span class="mw-ui-button mw-ui-progressive">{{{text}}}</span>]]</div>
+}}

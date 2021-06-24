@@ -1,0 +1,14 @@
+{
+  "name": "glam-page",
+  "version": "1.0.0",
+  "description": "MediaWiki Template for GLAMpages",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch ./src/ -o ./app/Template/GLAMpage/"
+  },
+  "author": "Martin Kraft",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

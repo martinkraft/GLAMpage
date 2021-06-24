@@ -1,0 +1,1 @@
+<onlyinclude><div class="glam-logo {{{classes|}}}" title="{{{title|}}}">[[File:{{{image}}}|200px|{{#if: {{{link|}}}|link={{{link}}}|}}]]</div></onlyinclude>

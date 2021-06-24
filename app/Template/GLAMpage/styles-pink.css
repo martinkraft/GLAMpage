@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/* CSS generated via Sass. Please do not change css-code here! */
+@keyframes slideOpenLeft {
+  from {
+    transform: translateX(50%) rotate(5deg); } }
+
+@keyframes slideOpenRight {
+  from {
+    transform: translateX(-50%) rotate(5deg); } }
+
+.glam-page {
+  font-family: sans-serif;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.7; }
+  .glam-page, .glam-page *, .glam-page *::before, .glam-page *::after {
+    box-sizing: border-box; }
+  .glam-page a {
+    text-decoration: none;
+    color: #e4007e; }
+    .glam-page a .external {
+      background-image: none;
+      margin-right: 0; }
+      .glam-page a .external::after {
+        content: ' ›'; }
+  .glam-page .glam-button {
+    font-family: sans-serif; }
+  .glam-page .mw-ui-button, .glam-page .mw-ui-button.mw-ui-progressive,
+  .glam-page .mw-ui-button:hover, .glam-page .mw-ui-button.mw-ui-progressive:hover {
+    background-color: #000;
+    border-color: #000;
+    font-weight: 400;
+    font-family: sans-serif; }
+  .glam-page p {
+    margin: .7em 0; }
+  .glam-page h2, .glam-page h3, .glam-page h4, .glam-page h5 {
+    font-family: "Linux Libertine", "Georgia", "Times", serif;
+    color: #e4007e;
+    line-height: 1;
+    border-bottom: none; }
+    .glam-page h2 .section-links, .glam-page h3 .section-links, .glam-page h4 .section-links, .glam-page h5 .section-links {
+      display: none; }
+  body.skin-vector-legacy .glam-page {
+    margin-top: -2.625rem; }
+  body.skin-minerva .glam-page {
+    z-index: 2;
+    margin-top: -5.1875rem; }
+  .glam-page .glam-section {
+    padding: 0 3.125rem; }
+    body.skin-minerva .glam-page .glam-section {
+      margin-left: calc( (100% - 100vw) / 2);
+      margin-right: calc( (100% - 100vw) / 2); }
+    .glam-page .glam-section.bg-grey, .glam-page .glam-section.glam-header {
+      background-color: #eaecf0; }
+    .glam-page .glam-section.bg-grey {
+      padding-top: 1.875rem;
+      padding-bottom: 1.875rem;
+      overflow: hidden; }
+    .glam-page .glam-section > .inner {
+      margin: 3.125rem auto; }
+      .glam-page .glam-section > .inner:not(.wide) {
+        max-width: 62.08125rem; }
+    .glam-page .glam-section.bg-grey + .glam-section.bg-grey {
+      margin-top: -3.125rem;
+      padding-top: 0; }
+      .glam-page .glam-section.bg-grey + .glam-section.bg-grey > .inner {
+        margin-top: 0; }
+  .glam-page .glam-header > .inner {
+    background-color: #e4007e;
+    font-family: "Linux Libertine", "Georgia", "Times", serif;
+    position: relative;
+    overflow: hidden; }
+    .glam-page .glam-header > .inner h2, .glam-page .glam-header > .inner h3, .glam-page .glam-header > .inner h4, .glam-page .glam-header > .inner h5 {
+      font-family: "Montserrat", Arial, sans-serif;
+      color: #fff; }
+    .glam-page .glam-header > .inner, .glam-page .glam-header > .inner a {
+      color: #fff; }
+  .glam-page .glam-header-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 2;
+    padding: 1em; }
+    .glam-page .glam-header-logo > a {
+      display: block; }
+      .glam-page .glam-header-logo > a > img {
+        width: 8.125rem;
+        height: auto; }
+    .glam-page .glam-header-logo::before, .glam-page .glam-header-logo::after {
+      content: '';
+      display: block;
+      background-color: #e4007e;
+      z-index: -1;
+      position: absolute;
+      top: -100%;
+      bottom: -300%;
+      transform-origin: 100% 20%;
+      left: -300%;
+      right: -66%;
+      animation-name: slideOpenLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out; }
+    .glam-page .glam-header-logo::before {
+      transform: rotate(45deg);
+      animation-duration: 1.2s;
+      animation-delay: .4s; }
+    .glam-page .glam-header-logo::after {
+      animation-delay: .8s;
+      opacity: 0.5;
+      transform: translateX(1em) rotate(39deg); }
+  .glam-page .glam-header-slide {
+    background-color: #e4007e;
+    overflow: hidden;
+    position: relative; }
+    .glam-page .glam-header-slide > .slide-image {
+      display: block;
+      overflow: hidden; }
+      .glam-page .glam-header-slide > .slide-image > a {
+        display: block;
+        min-height: 29.625rem;
+        width: 100%; }
+        .glam-page .glam-header-slide > .slide-image > a > img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto; }
+    .glam-page .glam-header-slide > .inner {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 2em;
+      width: 100%;
+      max-width: 21.875rem;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .glam-page .glam-header-slide > .inner::before, .glam-page .glam-header-slide > .inner::after {
+        content: '';
+        display: block;
+        background-color: #e4007e;
+        z-index: -1;
+        position: absolute;
+        top: -100%;
+        bottom: -300%;
+        transform-origin: 0 20%;
+        left: 33%;
+        right: -300%;
+        animation-name: slideOpenRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; }
+      .glam-page .glam-header-slide > .inner::before {
+        transform: rotate(20deg);
+        animation-duration: 1.2s;
+        animation-delay: .4s; }
+      .glam-page .glam-header-slide > .inner::after {
+        animation-delay: .8s;
+        opacity: 0.5;
+        transform: translateX(1em) rotate(30deg);
+        transform: translateX(-1em) rotate(30deg); }
+  .glam-page .glam-logos {
+    text-align: center; }
+  .glam-page .glam-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 1em; }
+  .glam-page .glam-circle {
+    text-align: center; }
+    .glam-page .glam-circle > * {
+      margin: 0 auto 1em; }
+    .glam-page .glam-circle > .glam-circle-image {
+      width: 80%; }
+    .glam-page .glam-circle-image {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #eaecf0; }
+      .glam-page .glam-circle-image > a {
+        display: block;
+        padding: 100% 0 0;
+        width: 100%; }
+        .glam-page .glam-circle-image > a > img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 100%;
+          width: auto; }
+  .glam-page .glam-row-3 {
+    display: flex;
+    /*grid-template-columns: repeat(1fr, 3);
+    grid-gap: 1em;*/ }

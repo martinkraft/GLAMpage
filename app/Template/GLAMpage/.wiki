@@ -1,0 +1,7 @@
+<noinclude>
+<div style="marging: 2em auto; max-width 20em; text-align:center">
+[[Datei:GLAM Logo (DACH).svg|200px]]
+
+Eine Sammlung von Vorlagen zu Gestaltung responsiver Seiten für die GLAM-Projekte des DACH-Raumes.<br><small>[[Special:PrefixIndex/Template:GLAMpage|Liste der Untervorlagen]] | [[Special:WhatLinksHere/GLAMpage/styles.css|Seiten, die diese Vorlagen verwenden]]</small>
+</div>
+</noinclude>

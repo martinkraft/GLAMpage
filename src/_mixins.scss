@@ -1,0 +1,73 @@
+@function pxToRem($px) {
+    @return 1rem * $px / $base-px;
+}
+
+@function pxToEm($px, $bpx) {
+    @return 1em * $px / $bpx;
+}
+
+/* Project specific */
+
+@keyframes slideOpenLeft {
+    from {
+        transform: translateX(50%) rotate(5deg);
+    }
+}
+
+@keyframes slideOpenRight {
+    from {
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
+
+@mixin color-sections($right, $a-before:20deg, $a-after:30deg) {
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        background-color: $c-primary;
+        z-index: -1;
+        position: absolute;
+
+        top: -100%;
+        bottom: -300%;
+
+        @if $right==true {
+            transform-origin: 0 20%;
+            left: 33%;
+            right: -300%;
+            animation-name: slideOpenRight;
+        }
+
+        @else {
+            transform-origin: 100% 20%;
+            left: -300%;
+            right: -66%;
+            animation-name: slideOpenLeft;
+        }
+
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+    &::before {
+        transform: rotate($a-before);
+        animation-duration: 1.2s;
+        animation-delay: .4s;
+    }
+
+    &::after {
+        animation-delay: .8s;
+        opacity: $c-opacity;
+
+        @if $right==true {
+            transform: translateX(-1em) rotate($a-after);
+        }
+
+        @else {
+            transform: translateX(1em) rotate($a-after);
+        }
+    }
+
+}

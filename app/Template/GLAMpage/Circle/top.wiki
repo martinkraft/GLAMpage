@@ -1,0 +1,1 @@
+<onlyinclude><div class="glam-circle {{{classes|}}}"><div class="glam-circle-image {{{image-classes|}}}">{{#if: {{{image|}}}|[[File:{{{image}}}|600px]]}}</div><div class="glam-circle-text {{{text-classes|}}}"></onlyinclude></div></div>

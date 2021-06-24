@@ -1,0 +1,253 @@
+.glam-page {
+
+  font-family: sans-serif;
+  color: $c-text;
+  font-size: $font-size;
+  line-height: 1.7;
+
+  &, *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+
+  a {
+    text-decoration: none;
+    color: $c-primary;
+
+    .external {
+      background-image: none;
+      margin-right: 0;
+
+      &::after {
+        content: ' ›';
+      }
+    }
+  }
+
+  .glam-button {
+    font-family: sans-serif;
+  }
+
+  .mw-ui-button,
+  .mw-ui-button.mw-ui-progressive,
+  .mw-ui-button:hover,
+  .mw-ui-button.mw-ui-progressive:hover {
+    background-color: $c-black;
+    border-color: $c-black;
+    font-weight: 400;
+    font-family: sans-serif;
+  }
+
+  p {
+    margin: .7em 0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $font-serif;
+    color: $c-primary;
+    line-height: 1;
+    border-bottom: none;
+
+    .section-links {
+      display: none;
+    }
+  }
+
+  body.skin-vector-legacy & {
+    margin-top: pxToRem(-42px);
+  }
+
+  body.skin-minerva & {
+    z-index: 2;
+    margin-top: pxToRem(-83px);
+  }
+
+  .glam-section {
+    padding: 0 pxToRem(50px);
+
+    body.skin-minerva & {
+      margin-left: calc((100% - 100vw) / 2);
+      margin-right: calc((100% - 100vw) / 2);
+    }
+
+    &.bg-grey,
+    &.glam-header {
+      background-color: $c-bg;
+    }
+
+    &.bg-grey {
+      padding-top: pxToRem(30px);
+      padding-bottom: pxToRem(30px);
+      overflow: hidden;
+    }
+
+    >.inner {
+      margin: pxToRem(50px) auto;
+
+      &:not(.wide) {
+        max-width: $col-width;
+      }
+    }
+
+    &.bg-grey+.glam-section.bg-grey {
+      margin-top: pxToRem(-50px);
+      padding-top: 0;
+
+      >.inner {
+        margin-top: 0;
+      }
+    }
+
+  }
+
+  .glam-header {
+    >.inner {
+      background-color: $c-primary;
+      font-family: $font-serif;
+      position: relative;
+      overflow: hidden;
+
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: $font-sans;
+        color: $c-white;
+      }
+
+      &,
+      a {
+        color: $c-white;
+      }
+    }
+
+    &-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 2;
+      padding: 1em;
+
+      >a {
+        display: block;
+
+        >img {
+          width: pxToRem(130px);
+          height: auto;
+        }
+      }
+
+      @include color-sections(false, 45deg, 39deg)
+    }
+
+    &-slide {
+      background-color: $c-primary;
+      overflow: hidden;
+      position: relative;
+
+      >.slide-image {
+        display: block;
+        overflow: hidden;
+
+        >a {
+          display: block;
+          min-height: pxToRem(474px);
+          width: 100%;
+
+          >img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+
+      >.inner {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        z-index: 1;
+
+        padding: 2em;
+
+        width: 100%;
+        max-width: pxToRem(350px);
+        text-align: right;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        @include color-sections(true);
+      }
+    }
+  }
+
+  .glam-logos {
+    text-align: center;
+  }
+
+  .glam-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 1em;
+  }
+
+
+  .glam-circle {
+    text-align: center;
+
+    >* {
+      margin: 0 auto 1em;
+    }
+
+    >.glam-circle-image {
+      width: 80%;
+    }
+
+    &-image {
+      width: 100%;
+
+      display: block;
+      overflow: hidden;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: $c-bg;
+
+
+      >a {
+        display: block;
+        padding: 100% 0 0;
+        width: 100%;
+
+        >img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .glam-row-3 {
+    display: flex;
+  }
+
+}
