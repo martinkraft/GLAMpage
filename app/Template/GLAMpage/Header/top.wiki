@@ -1,1 +1,1 @@
-<onlyinclude><div class="glam-section glam-header {{{classes|}}}"><div class="inner {{{innerclasses|}}}"><div class="glam-header-logo">[[File:GLAM Logo (DACH) white.svg|145px;]]</div></onlyinclude></div></div>
+<onlyinclude><div class="glam-section glam-header {{{classes|}}}"><div class="inner {{{innerclasses|}}}"><div class="glam-header-logo">[[File:GLAM Logo (DACH) white.svg|145px;]]</div><div class="glam-header-slide-container"></onlyinclude></div></div></div>

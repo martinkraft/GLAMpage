@@ -254,7 +254,7 @@
   .glam-page *::after {
     box-sizing: border-box; }
   .glam-page a {
-    color: #e6ad00; }
+    color: #0088b9; }
     .glam-page a:not(:hover) {
       text-decoration: none; }
     .glam-page a .external {
@@ -279,7 +279,7 @@
   .glam-page h4,
   .glam-page h5 {
     font-family: "Linux Libertine", "Georgia", "Times", serif;
-    color: #e6ad00;
+    color: #0088b9;
     line-height: 1.2;
     border-bottom: none; }
     .glam-page h2 .section-links,
@@ -320,7 +320,7 @@
     .glam-page .glam-section.bg-grey + .glam-section.bg-grey > .inner {
       margin-top: 0; }
   .glam-page .glam-header > .inner {
-    background-color: #e6ad00;
+    background-color: #0088b9;
     font-family: "Linux Libertine", "Georgia", "Times", serif;
     position: relative;
     overflow: hidden;
@@ -349,7 +349,7 @@
     .glam-page .glam-header-logo::before, .glam-page .glam-header-logo::after {
       content: '';
       display: block;
-      background-color: #e6ad00;
+      background-color: #0088b9;
       z-index: -1;
       position: absolute;
       top: -100%;
@@ -372,7 +372,7 @@
     display: flex;
     width: 100%; }
   .glam-page .glam-header-slide {
-    background-color: #e6ad00;
+    background-color: #0088b9;
     overflow: hidden;
     position: relative;
     flex: 0 0 100%; }
@@ -408,7 +408,7 @@
       .glam-page .glam-header-slide > .inner::before, .glam-page .glam-header-slide > .inner::after {
         content: '';
         display: block;
-        background-color: #e6ad00;
+        background-color: #0088b9;
         z-index: -1;
         position: absolute;
         top: -100%;
@@ -539,7 +539,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: #e6ad00;
+      background-color: #0088b9;
       transform-origin: 0 0;
       transform: translateX(-3em) skew(-30deg);
       z-index: -1; }

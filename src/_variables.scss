@@ -2,9 +2,9 @@
 
 $c-pink: #e4007e;
 $c-orange: #ff8800;
-$c-yellow: #ffc400;
+$c-yellow: #e6ad00;//#ffc400;
 $c-green: #0ea300;
-$c-cyan: #19a0d2;
+$c-cyan: #0088b9;
 $c-blue: #1448a8;
 $c-grey: #eaecf0;
 $c-grey-d: #919294;
@@ -16,14 +16,21 @@ $c-text: $c-black;
 $c-opacity: .5;
 
 $base-px: 16px;
-$font-size: 18px;
 $font-sans: "Montserrat", Arial, sans-serif;
 $font-serif: "Linux Libertine", "Georgia", "Times", serif;
 
-$slide-max: 8;
+$slide-max: 10;
 $slide-duration: 5s;
 
 @import "mixins";
 
+$font-size: pxToRem(16px);
+$font-size-big: pxToRem(18px);
+
+$line-height-wide: 1.7;
+$line-height-narrow: 1.2;
+
+$gutter: 2rem;
 $col-minerva-max: 993.3px;
+$col-vector-margin: 225px;
 $col-width: pxToRem($col-minerva-max);

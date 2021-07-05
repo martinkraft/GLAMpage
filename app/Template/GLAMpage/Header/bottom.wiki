@@ -1,1 +1,1 @@
-<includeonly><div class="glam-slide-dragger"></div></div></div data-end-of="glam-header"></includeonly>
+<div><div><div><onlyinclude><div class="glam-slide-dragger"></div></div data-end-of="glam-header-slide-container"></div></div data-end-of="glam-header"></onlyinclude>
