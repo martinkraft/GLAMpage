@@ -1,2 +1,8 @@
-<onlyinclude><templatestyles src="Template:GLAMpage/styles-pink.css" />__NOTOC__ __NOEDITSECTION__<div class="glam-page"></onlyinclude>
+<onlyinclude>{{#switch:{{{color|pink}}}
+|blue= <templatestyles src="Template:GLAMpage/styles-blue.css" />
+|green= <templatestyles src="Template:GLAMpage/styles-green.css" />
+|orange= <templatestyles src="Template:GLAMpage/styles-orange.css" />
+|yellow= <templatestyles src="Template:GLAMpage/styles-yellow.css" />
+|pink= <templatestyles src="Template:GLAMpage/styles-pink.css" />
+}}__NOTOC__ __NOEDITSECTION__<div class="glam-page"></onlyinclude>
 </div></div></div>

@@ -1,3 +1,21 @@
+// Animations
+
+@for $i from 2 through $slide-max {
+
+  @keyframes slide-dragger-ani-#{$i} {
+    @for $j from 0 through ($i - 1) {
+      #{ ($j / $i) * 100% } {
+        margin-left: ($j) * -100%;
+      }
+      #{ (($j + .8) / $i) * 100% } {
+        margin-left: ($j) * -100%;
+      }
+    }    
+  }
+}
+
+// GLAMpage
+
 .glam-page {
 
   font-family: sans-serif;
@@ -5,7 +23,10 @@
   font-size: $font-size;
   line-height: 1.7;
 
-  &, *, *::before, *::after {
+  &,
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
@@ -109,6 +130,7 @@
       font-family: $font-serif;
       position: relative;
       overflow: hidden;
+      display: flex;
 
       h2,
       h3,
@@ -148,6 +170,7 @@
       background-color: $c-primary;
       overflow: hidden;
       position: relative;
+      flex: 0 0 100%;
 
       >.slide-image {
         display: block;
@@ -193,6 +216,22 @@
         @include color-sections(true);
       }
     }
+
+    .glam-slide-dragger {
+      order: -1;
+      flex: 0 0 0;
+      background-color: #0F0;
+      animation-iteration-count: infinite;
+      //animation-direction: alternate;
+
+      @for $i from 2 through $slide-max {
+        &:nth-child( #{$i + 2} ) {
+          //margin-left: ($i - 1) * -100%;
+          animation-name: slide-dragger-ani-#{$i};
+          animation-duration: $i * $slide-duration;
+        }
+      }
+    }
   }
 
   .glam-logos {
@@ -203,6 +242,11 @@
     display: inline-block;
     vertical-align: middle;
     margin: 1em;
+    transition: all .3s ease-in-out;
+
+    &:not(:hover) {
+      transform: scale(.89);
+    }
   }
 
 

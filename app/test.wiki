@@ -5,6 +5,21 @@
 Die Gärten von Sanssouci in Kooperation mit der Stiftung Preusische Schlösser und Gärten  für Wikipedia erfahrbar machen.
 {{GLAMpage/Button|link=Wikipedia:W:GLAM/GLAM_on_Tour|text=Weiterlesen}}
 {{GLAMpage/Header/Slide/bottom}}
+{{GLAMpage/Header/Slide/top|image=GLAM_2018_Sound_of_Changes_Grubenführung_Zeche_Nachtigall-Witten.jpg}}
+== Grubenführung Zeche Nachtigall-Witten ==
+Die Gärten von Sanssouci in Kooperation mit der Stiftung Preusische Schlösser und Gärten  für Wikipedia erfahrbar machen.
+{{GLAMpage/Button|link=Wikipedia:W:GLAM/GLAM_on_Tour|text=Weiterlesen}}
+{{GLAMpage/Header/Slide/bottom}}
+{{GLAMpage/Header/Slide/top|image=MEK 2017 Aug 1st c.jpg}}
+== GLAM im Museum Europäischer Kulturen, 2017 ==
+Die Gärten von Sanssouci in Kooperation mit der Stiftung Preusische Schlösser und Gärten  für Wikipedia erfahrbar machen.
+{{GLAMpage/Button|link=Wikipedia:W:GLAM/GLAM_on_Tour|text=Weiterlesen}}
+{{GLAMpage/Header/Slide/bottom}}
+{{GLAMpage/Header/Slide/top|image=Wikipedianerführung im Landesmuseum Württemberg Stuttgart3.JPG}}
+== Wikipedianer im Landesmuseum Württemberg Stuttgart 2015 ==
+Die Gärten von Sanssouci in Kooperation mit der Stiftung Preusische Schlösser und Gärten  für Wikipedia erfahrbar machen.
+{{GLAMpage/Button|link=Wikipedia:W:GLAM/GLAM_on_Tour|text=Weiterlesen}}
+{{GLAMpage/Header/Slide/bottom}}
 {{GLAMpage/Header/bottom}}
 
 {{GLAMpage/Section/top}}

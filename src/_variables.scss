@@ -20,6 +20,9 @@ $font-size: 18px;
 $font-sans: "Montserrat", Arial, sans-serif;
 $font-serif: "Linux Libertine", "Georgia", "Times", serif;
 
+$slide-max: 8;
+$slide-duration: 5s;
+
 @import "mixins";
 
 $col-minerva-max: 993.3px;
