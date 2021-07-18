@@ -376,9 +376,11 @@
     ol,
     li {
       list-style-type: none;
+      list-style-image: none;
       padding: 0;
       margin: 0;
 
+      &.active>a,
       .glam-nav-active>a {
         color: currentColor;
       }
@@ -440,7 +442,7 @@
 
     @media screen and (min-width:$navi-breakpoint) {
       right: 100%;
-      width: 20rem;
+      width: 25%;
       text-align: right;
 
       &-inner {
@@ -449,9 +451,31 @@
         }
       }
 
-      >a,
-      >ul>li>ul {
+      >a {
         display: none;
+      }
+
+      >ul>li {
+
+        &:not(.active)>ul {
+          display: none;
+        }
+
+        &>ul {
+          position: absolute;
+          top: 0;
+          left: 500%;
+          right: -500%;
+          display: block;
+          padding: .5rem 1rem;
+          text-align: left;
+
+          >li{
+            >ul{
+              padding-right: 1rem;
+            }
+          }
+        }
       }
     }
 
@@ -480,17 +504,20 @@
         }
 
         &~.glam-navi-trigger {
-          &>a:last-child{
+          &>a:last-child {
             display: block;
           }
-          &>a:first-child{
-            &::before{
-              transform: translateY(.42em) rotate(45deg);              
+
+          &>a:first-child {
+            &::before {
+              transform: translateY(.42em) rotate(45deg);
             }
-            &>span{
+
+            &>span {
               transform: rotate(45deg);
             }
-            &::after{
+
+            &::after {
               transform: translateY(-.42em) rotate(-45deg);
               box-shadow: none;
             }
@@ -521,30 +548,29 @@
     }
   }
 
-
   .toc.toc {
-    border:none;
+    border: none;
     background-color: transparent;
     display: block;
     padding: 0;
 
-    >ul{
-      margin:0;
-      padding:0;
+    >ul {
+      margin: 0;
+      padding: 0;
       font-size: $font-size;
       line-height: $line-height-narrow;
 
-      >li{
+      >li {
         padding: .5em 0;
         border-top: 1px solid $c-bg;
         position: relative;
         //padding-left: 1.2em;
 
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           right: calc(100% + .6em);
-          top:.7em;
+          top: .7em;
           display: block;
           width: .6em;
           height: .6em;
@@ -556,9 +582,9 @@
       }
     }
 
-    .toctitle{
+    .toctitle {
 
-      h2{
+      h2 {
         font-size: $font-size;
         color: currentColor;
         font-family: sans-serif;
@@ -568,23 +594,26 @@
       }
 
       display: flex;
-      >*{
+
+      >* {
         position: relative;
 
-        &:last-child{
+        &:last-child {
           margin-left: auto;
         }
       }
 
-      .toctogglespan{
-        &::before, &::after{
+      .toctogglespan {
+
+        &::before,
+        &::after {
           content: none;
         }
 
         .toctogglelabel {
-          &::after{
+          &::after {
             content: "";
-            display:block;
+            display: block;
             border: 2px solid $c-grey;
             border-bottom: transparent;
             border-right: transparent;
@@ -598,12 +627,12 @@
       }
     }
 
-    .toctogglecheckbox:checked + .toctitle .toctogglelabel::after{
+    .toctogglecheckbox:checked+.toctitle .toctogglelabel::after {
       content: "";
       transform: translateY(.5em) rotate(-135deg);
     }
 
-    .tocnumber{
+    .tocnumber {
       display: none;
     }
 

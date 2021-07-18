@@ -499,10 +499,14 @@
     .glam-page .glam-navi ol,
     .glam-page .glam-navi li {
       list-style-type: none;
+      list-style-image: none;
       padding: 0;
       margin: 0; }
+      .glam-page .glam-navi ul.active > a,
       .glam-page .glam-navi ul .glam-nav-active > a,
+      .glam-page .glam-navi ol.active > a,
       .glam-page .glam-navi ol .glam-nav-active > a,
+      .glam-page .glam-navi li.active > a,
       .glam-page .glam-navi li .glam-nav-active > a {
         color: currentColor; }
     .glam-page .glam-navi li {
@@ -548,13 +552,24 @@
     @media screen and (min-width: 1700px) {
       .glam-page .glam-navi {
         right: 100%;
-        width: 20rem;
+        width: 25%;
         text-align: right; }
         .glam-page .glam-navi-inner .glam-navi-trigger {
           display: none; }
-        .glam-page .glam-navi > a,
+        .glam-page .glam-navi > a {
+          display: none; }
+        .glam-page .glam-navi > ul > li:not(.active) > ul {
+          display: none; }
         .glam-page .glam-navi > ul > li > ul {
-          display: none; } }
+          position: absolute;
+          top: 0;
+          left: 500%;
+          right: -500%;
+          display: block;
+          padding: .5rem 1rem;
+          text-align: left; }
+          .glam-page .glam-navi > ul > li > ul > li > ul {
+            padding-right: 1rem; } }
     @media screen and (max-width: 1699.9px) {
       .glam-page .glam-navi {
         background-color: #000;

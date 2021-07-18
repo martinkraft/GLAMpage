@@ -105,6 +105,7 @@ function init(configPage)
     end
     
     function prepareNodeHtml(node, i, parentNode)
+
         if node.isCurrentPage then
             node.innerHtml = templateData.threadNaviItemActive
         else
@@ -125,12 +126,10 @@ function init(configPage)
             end
         end
 
-        if node.childHtml == '' then
-            node.outerHtml = '<li>' .. node.innerHtml .. '</li>'
-        else
-            node.childHtml = '<ul>' .. node.childHtml .. '</ul>'
-            node.outerHtml = '<li>' .. node.innerHtml .. node.childHtml .. '</li>'
-        end
+        local isActive = node.isCurrentPage or node.containsCurrentPage
+
+        node.childHtml = (node.childHtml == '') and '' or ('<ul>' .. node.childHtml .. '</ul>')
+        node.outerHtml = '<li' .. (isActive and ' class="active"' or '') ..  '>' .. node.innerHtml .. node.childHtml .. '</li>'
 
         if parentNode then
             parentNode.childHtml = parentNode.childHtml .. node.outerHtml
