@@ -141,9 +141,66 @@
 
   .glam-header {
     >.inner {
+      position: relative;
+
+      &:not(.glam-navi-inner) {
+        overflow: hidden;
+      }
+    }
+
+    &-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 2;
+      padding: 1em;
+
+      >a {
+        display: inline-block;
+        position: relative;
+
+        >img {
+          display: block;
+          width: pxToRem(130px);
+          height: auto;
+
+          @media screen and (max-width:600px) {
+            width: calc(6vw + 5rem);
+          }
+        }
+
+        @include bg-blocks() {
+          background-color: $c-primary;
+          transform-origin: 100% 12.5%;
+
+          top: -100%;
+          right: -66%;
+          bottom: -600%;
+          left: -300%;
+
+          animation-name: slideOpenLeft;
+        }
+
+        &::before {
+          animation-duration: 1.2s;
+          animation-delay: .4s;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          animation-delay: .8s;
+          opacity: $c-opacity;
+          transform: translateX(1em) rotate(39deg);
+        }
+      }
+    }
+
+    &-slide-container {
+      display: flex;
+      width: 100%;
       background-color: $c-primary;
       font-family: $font-serif;
-      position: relative;
       overflow: hidden;
       font-size: $font-size-big;
 
@@ -161,31 +218,6 @@
       }
     }
 
-    &-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      z-index: 2;
-      padding: 1em;
-
-      >a {
-        display: block;
-
-        >img {
-          width: pxToRem(130px);
-          height: auto;
-        }
-      }
-
-      @include color-sections(false, 45deg, 39deg)
-    }
-
-    &-slide-container {
-      display: flex;
-      width: 100%;
-    }
-
     &-slide {
       background-color: $c-primary;
       overflow: hidden;
@@ -195,10 +227,12 @@
       >.slide-image {
         display: block;
         overflow: hidden;
+        position: relative;
 
         >a {
           display: block;
-          min-height: pxToRem(474px);
+          height: calc(16rem + 26vw);
+          max-height: pxToRem(474px);
           width: 100%;
 
           >img {
@@ -206,6 +240,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            object-fit: cover;
 
             min-width: 100%;
             min-height: 100%;
@@ -216,149 +251,444 @@
       }
 
       >.inner {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-
+        position: relative;
+        padding: 2em;
+        padding-top: 0;
         z-index: 1;
 
-        padding: 2em;
-
         width: 100%;
-        max-width: pxToRem(350px);
-        text-align: right;
 
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
 
-        @include color-sections(true);
-      }
-    }
+        text-align: center;
 
-    .glam-slide-dragger {
-      order: -1;
-      flex: 0 0 0;
-      background-color: #0F0;
-      animation-iteration-count: infinite;
-      //animation-direction: alternate;
+        @include bg-blocks() {
+          background-color: $c-primary;
+          animation-name: slideOpenRight;
 
-      @for $i from 1 through $slide-max {
-        &:nth-child(#{$i + 1}) {
-          //margin-left: ($i - 1) * -100%;
-          animation-name: slide-dragger-ani-#{$i};
-          animation-duration: $i * $slide-duration;
+          transform-origin: 33% 0;
+          top: 0;
+          left: -100%;
+          bottom: -100%;
+          right: -100%;
+        }
+
+        &::before {
+          animation-duration: 1.2s;
+          animation-delay: .4s;
+          transform: rotate(-10deg);
+        }
+
+        &::after {
+          animation-delay: .8s;
+          opacity: $c-opacity;
+          transform: translateY(-.7em) rotate(-16deg);
+        }
+
+        @media screen and (min-width:#{640px + $col-vector-margin}) {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          max-width: pxToRem(350px);
+          text-align: right;
+          justify-content: flex-end;
+          padding-top: 2em;
+
+          &::after,
+          &::before {
+            transform-origin: 0 20%;
+            top: -100%;
+            bottom: -300%;
+            right: -300%;
+            left: 33%;
+          }
+
+          &::before {
+            transform: rotate(20deg);
+          }
+
+          &::after {
+            transform: translateX(-1em) rotate(30deg);
+          }
+        }
+
+        body:not(.skin-vector-legacy) & {
+          @media screen and (min-width:640px) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            max-width: pxToRem(350px);
+            text-align: right;
+            justify-content: flex-end;
+            padding-top: 2em;
+
+            &::after,
+            &::before {
+              transform-origin: 0 20%;
+              top: -100%;
+              bottom: -300%;
+              right: -300%;
+              left: 33%;
+            }
+
+            &::before {
+              transform: rotate(20deg);
+            }
+
+            &::after {
+              transform: translateX(-1em) rotate(30deg);
+            }
+          }
         }
       }
     }
   }
 
-  .glam-logos {
-    text-align: center;
-  }
-
-  .glam-logo {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 1em;
-    transition: all .3s ease-in-out;
-
-    &:not(:hover) {
-      transform: scale(.89);
-    }
-  }
-
-
-  .glam-circle {
-    text-align: center;
+  .glam-navi {
+    position: absolute;
+    top: 0;
+    font-size: $font-size;
     line-height: $line-height-narrow;
+    padding: .5rem 1rem;
 
-    >* {
-      margin: 0 auto 1em;
+    &-anchor {
+      position: fixed;
+      top: 0;
     }
 
-    >.glam-circle-image {
-      width: 80%;
-    }
-
-    &-image {
-      width: 100%;
-
-      display: block;
-      overflow: hidden;
-      position: relative;
-      overflow: hidden;
-      border-radius: 50%;
-      background-color: $c-bg;
-
+    &-off {
+      display: none;
 
       >a {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         display: block;
-        padding: 100% 0 0;
-        width: 100%;
+      }
+    }
 
-        >img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+    ul,
+    ol,
+    li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
 
-          min-height: 100%;
-          height: 100%;
-          width: auto;
+      .glam-nav-active>a {
+        color: currentColor;
+      }
+    }
+
+    li {
+      margin-top: .5rem;
+    }
+
+    &-inner {
+      position: relative;
+      z-index: 4;
+      margin-top: 0;
+      margin-bottom: 0;
+
+
+
+      .glam-navi-trigger {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 3;
+
+        >a {
+          padding: 1rem;
+          box-sizing: content-box;
+
+          &:last-child {
+            @include cover-parent();
+            display: none;
+          }
+
+          &:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 1.8rem;
+            width: 1em;
+            height: 1em;
+            background-color: transparent;
+
+            &::before,
+            &::after,
+            >span {
+              content: '';
+              display: block;
+              width: 100%;
+              height: .16em;
+              background-color: $c-white;
+              box-shadow: 0 0 .3em rgba(0, 0, 0, .7);
+              transition: all .5s;
+            }
+          }
+        }
+      }
+    }
+
+    $navi-breakpoint: 1700px;
+
+    @media screen and (min-width:$navi-breakpoint) {
+      right: 100%;
+      width: 20rem;
+      text-align: right;
+
+      &-inner {
+        .glam-navi-trigger {
+          display: none;
+        }
+      }
+
+      >a,
+      >ul>li>ul {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width:#{$navi-breakpoint - .1px}) {
+      background-color: $c-black;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      text-align: center;
+      transition: max-height .6s, padding .6s;
+      color: $c-white;
+      font-size: $font-size-big;
+
+      max-height: 100rem;
+
+      &-anchor:not(:target)~.glam-navi {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &-anchor:target {
+        &~.glam-navi {
+          padding-top: 2em;
+          padding-bottom: 2em;
+        }
+
+        &~.glam-navi-trigger {
+          &>a:last-child{
+            display: block;
+          }
+          &>a:first-child{
+            &::before{
+              transform: translateY(.42em) rotate(45deg);              
+            }
+            &>span{
+              transform: rotate(45deg);
+            }
+            &::after{
+              transform: translateY(-.42em) rotate(-45deg);
+              box-shadow: none;
+            }
+          }
+
+        }
+
+        .glam-navi-off {
+          display: block;
         }
       }
     }
   }
 
-  .glam-intro {
-    font-size: $font-size-big;
-  }
+  .glam-slide-dragger {
+    order: -1;
+    flex: 0 0 0;
+    background-color: #0F0;
+    animation-iteration-count: infinite;
+    //animation-direction: alternate;
 
-  .glam-row,
-  .glam-row-3 {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
-  .glam-row>.glam-col {
-    flex: 1 1 100%;
-    margin-bottom: $gutter;
-
-    @media (min-width:500px) {
-      &.marginal {
-        flex: 1 1 30%;
-        margin-left: $gutter;
+    @for $i from 1 through $slide-max {
+      &:nth-child(#{$i + 1}) {
+        //margin-left: ($i - 1) * -100%;
+        animation-name: slide-dragger-ani-#{$i};
+        animation-duration: $i * $slide-duration;
       }
     }
   }
 
-  // Styling MediaWiki Elements
 
-  .gallery {
-    &.mw-gallery-packed {
-      margin-left: 0;
-      margin-right: 0;
+  .toc.toc {
+    border:none;
+    background-color: transparent;
+    display: block;
+    padding: 0;
 
-      display: flex;
-      flex-wrap: wrap;
+    >ul{
+      margin:0;
+      padding:0;
+      font-size: $font-size;
+      line-height: $line-height-narrow;
 
-      li,
-      div {
-        //width: auto!important;
-        //display: block;
+      >li{
+        padding: .5em 0;
+        border-top: 1px solid $c-bg;
+        position: relative;
+        //padding-left: 1.2em;
+
+        &::before{
+          content: "";
+          position: absolute;
+          right: calc(100% + .6em);
+          top:.7em;
+          display: block;
+          width: .6em;
+          height: .6em;
+          border: 2px solid $c-grey;
+          border-bottom: transparent;
+          border-right: transparent;
+          transform: rotate(225deg);
+        }
+      }
+    }
+
+    .toctitle{
+
+      h2{
+        font-size: $font-size;
+        color: currentColor;
+        font-family: sans-serif;
+        font-weight: 400;
+        color: $c-grey;
+        text-transform: uppercase;
       }
 
-      .gallerybox {
-        .gallerytext {
-          line-height: $line-height-narrow;
-          text-align: left;
+      display: flex;
+      >*{
+        position: relative;
 
-          >:first-child {
-            margin-top: 0;
+        &:last-child{
+          margin-left: auto;
+        }
+      }
+
+      .toctogglespan{
+        &::before, &::after{
+          content: none;
+        }
+
+        .toctogglelabel {
+          &::after{
+            content: "";
+            display:block;
+            border: 2px solid $c-grey;
+            border-bottom: transparent;
+            border-right: transparent;
+            transform: translateY(.5em) rotate(45deg);
+            transform-origin: 33% 33%;
+            transition: all .5s;
+            width: 1em;
+            height: 1em;
           }
+        }
+      }
+    }
+
+    .toctogglecheckbox:checked + .toctitle .toctogglelabel::after{
+      content: "";
+      transform: translateY(.5em) rotate(-135deg);
+    }
+
+    .tocnumber{
+      display: none;
+    }
+
+  }
+}
+
+.glam-logos {
+  text-align: center;
+}
+
+.glam-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 1em;
+  transition: all .3s ease-in-out;
+
+  &:not(:hover) {
+    transform: scale(.89);
+  }
+}
+
+.glam-circle {
+  text-align: center;
+  line-height: $line-height-narrow;
+
+  >* {
+    margin: 0 auto 1em;
+  }
+
+  >.glam-circle-image {
+    width: 80%;
+  }
+
+  &-image {
+    width: 100%;
+
+    display: block;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: $c-bg;
+
+
+    >a {
+      display: block;
+      padding: 100% 0 0;
+      width: 100%;
+
+      >img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+
+        min-height: 100%;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}
+
+.glam-intro {
+  font-size: $font-size-big;
+}
+
+// Styling MediaWiki Elements
+
+.gallery {
+  &.mw-gallery-packed {
+    margin-left: 0;
+    margin-right: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .gallerybox {
+      .gallerytext {
+        line-height: $line-height-narrow;
+        text-align: left;
+
+        >:first-child {
+          margin-top: 0;
         }
       }
     }

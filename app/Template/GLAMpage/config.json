@@ -1,0 +1,80 @@
+{
+    "structure": [{
+            "name": "Wiki GLAM",
+            "page": "WP:GLAM",
+            "lang": "de",
+            "id": "home",
+            "children": [{
+                    "name": "für Institutionen",
+                    "page": "Wikipedia:GLAM/Institutionen"
+                },
+                {
+                    "name": "für Freiwillige",
+                    "page": "Wikipedia:GLAM/Freiwillige",
+                    "children": [{
+                        "name": "Wikipedian in Residenz",
+                        "page": "Wikipedia:GLAM/Presse"
+                    }]
+                },
+                {
+                    "name": "für die Presse",
+                    "page": "Wikipedia:GLAM/Presse",
+                    "children": [{
+                            "name": "Pressemeldung 1",
+                            "page": "Wikipedia:GLAM/Presse 1"
+                        },
+                        {
+                            "name": "Pressemeldung 2",
+                            "page": "Wikipedia:GLAM/Presse 2"
+                        },
+                        {
+                            "name": "Pressemeldung 3",
+                            "page": "Wikipedia:GLAM/Presse 3"
+                        }
+                    ]
+                },
+                {
+                    "name": "Erfahrungsberichte",
+                    "page": "Wikipedia:GLAM/Erfahrungsberichte",
+                    "children": [{
+                            "name": "Erfahrungsbericht 1",
+                            "page": "Wikipedia:GLAM/Case 1"
+                        },
+                        {
+                            "name": "Ein toller Erfahrungsbericht",
+                            "page": "User:Interaktionsdesign/GLAM/test"
+                        },
+                        {
+                            "name": "Erfahrungsbericht 3",
+                            "page": "Wikipedia:GLAM/Case 3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "lang": "en",
+            "name": "Wiki GLAM",
+            "page": ":commons:Commons:GLAM/en",
+            "id": "home",
+            "children": [{
+                "name": "for Institutions",
+                "page": "Commons:GLAM/en/Institutions"
+            }]
+        }
+    ],
+    "templates": {
+        "widget": "\u003Cdiv class=\"glam-navi\"\u003E§§threadNavi§§\u003C/div\u003E",
+        "threadNaviItem": "[[§§page§§|§§name§§]]",
+        "threadNaviItemActive": "\u003Cspan class=\"glam-nav-active\"\u003E[[§§page§§|§§name§§]]\u003C/span\u003E",
+        "pagina": "\u003Cdiv class=\"glam-nav-pagina\"\u003E§§btnLast§§ Seite §§currentPageNo§§ von §§totalPageNo§§ §§btnNext§§ §§btnAll§§\u003C/div\u003E",
+        "paginaStart": "\u003Cdiv class=\"glam-nav-pagina\"\u003ETutorial starten §§btnNext§§ §§btnAll§§\u003C/div\u003E",
+        "paginaAll": "\u003Cdiv\u003E[[§§page§§|Einzelseiten anzeigen]]\u003C/div\u003E",
+        "btnAll": "\u003Cdiv\u003E[[§§page§§|Alles auf einer Seite]]\u003C/div\u003E",
+        "btnLast": "\u003Cspan class=\"glam-btn-last\"\u003E[[Datei:OOjs UI icon leftTriangle-progressive.svg|24px|link=§§page§§|§§name§§]]\u003C/span\u003E",
+        "btnNext": "\u003Cspan class=\"glam-btn-next\"\u003E[[Datei:OOjs UI icon rightTriangle-progressive.svg|24px|link=§§page§§|§§name§§]]\u003C/span\u003E",
+        "articleFooter": "\u003Cdiv class=\"glam-article-footer\"\u003E§§footerBtnLast§§ §§footerBtnNext§§\u003C/div\u003E",
+        "footerBtnLast": "[[§§articleLink§§|\u003Cspan class=\"mw-ui-button\"\u003EZurück zu §§articleName§§\u003C/span\u003E]]",
+        "footerBtnNext": "[[§§articleLink§§|\u003Cspan class=\"mw-ui-button mw-ui-progressive\"\u003EWeiter mit §§articleName§§\u003C/span\u003E]]"
+    }
+}

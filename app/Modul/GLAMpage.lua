@@ -7,8 +7,10 @@
 
 -- Local functions and vars
 
-local configData, templateData, rootNode
+local configData, templateData, rootNode, rootNodes
 local currentTitle, currentNode, refNode, lastNode, nextNode 
+local pagesById = {}
+local rootNodesByLang = {}
 local isAllPage
 local currentPageNo = 0
 local totalPageNo = 0
@@ -20,17 +22,10 @@ function init(configPage)
     if inited then return end
     inited = true
 
-    --mw.log('Lua Init')
-
-    currentTitle = mw.title.getCurrentTitle()       
-    if not configPage then configPage = 'Template:GLAMpage/config.json' end
-    configData = mw.text.jsonDecode( mw.title.new(configPage):getContent() )
-
-    rootNode = configData.structure
-    refNode = rootNode
-    templateData = configData.templates
+    -- Functions
 
     local previousNode
+
     function initNode(node, i, parentNode)
         node.index = i
         node.childCount = 0
@@ -39,6 +34,14 @@ function init(configPage)
         node.containsCurrentPage = node.isCurrentPage
         --node.isAllPage = false
         node.isLastNode = false
+
+        
+        if parentNode then
+            node.parent = parentNode
+            node.root = parentNode.root
+        else
+            node.root = node
+        end
 
         if not node.isCurrentPage and node.all then
             node.allTitle = mw.title.new(node.all)
@@ -80,8 +83,6 @@ function init(configPage)
 
         node.refNode = node;
         if parentNode then
-            node.parent = parentNode
-
             if node.childCount == 0 then
                 node.refNode = node.parent;
             end
@@ -93,6 +94,11 @@ function init(configPage)
 
         if node.refNode == node then
             node.isRefNode = true
+        end
+
+        if node.id then            
+            pagesById[node.id] = pagesById[node.id] or {}
+            pagesById[node.id][node.root.lang] = node 
         end
 
         return node;
@@ -122,7 +128,7 @@ function init(configPage)
         if node.childHtml == '' then
             node.outerHtml = '<li>' .. node.innerHtml .. '</li>'
         else
-            node.childHtml = '<ol style="margin-left:2.2ex;">' .. node.childHtml .. '</ol>'
+            node.childHtml = '<ul>' .. node.childHtml .. '</ul>'
             node.outerHtml = '<li>' .. node.innerHtml .. node.childHtml .. '</li>'
         end
 
@@ -132,22 +138,50 @@ function init(configPage)
 
         return node;
     end;
-        
-    initNode(rootNode, 0, false)
 
-    if not currentNode then
-        currentNode = rootNode;
+
+    --mw.log('Lua Init')
+
+
+    -- Processing
+
+    currentTitle = mw.title.getCurrentTitle()       
+    if not configPage then configPage = 'Template:GLAMpage/config.json' end
+    configData = mw.text.jsonDecode( mw.title.new(configPage):getContent() )
+
+    rootNodes = configData.structure
+    templateData = configData.templates
+
+    local refLang, firstRoot
+
+    for rootIndex, rootNode in pairs( rootNodes ) do
+
+        if not firstRoot then firstRoot = rootNode end
+
+        refNode = rootNode
+        refLang = rootNode.lang
+
+        if refLang then rootNodesByLang[refLang] = rootNode end
+            
+        initNode(rootNode, 0, false)
+
     end
 
-    refNode = currentNode.refNode
-    totalPageNo = refNode.childCount
-    currentPageNo = currentNode.index
-    isLastNode = currentNode.isLastNode
-    isAllPage = currentNode.isAllPage
-    nextNode = currentNode.nextNode
-    lastNode = currentNode.lastNode
+    if not currentNode then
+        currentNode = firstRoot;
+    end
+
+    if currentNode then
+        refNode = currentNode.refNode
+        totalPageNo = refNode.childCount
+        currentPageNo = currentNode.index
+        isLastNode = currentNode.isLastNode
+        isAllPage = currentNode.isAllPage
+        nextNode = currentNode.nextNode
+        lastNode = currentNode.lastNode
+    end
     
-    prepareNodeHtml(rootNode, 0)
+    prepareNodeHtml(currentNode.root, 0)
 end
 
 function getPageContent( node, frame )
@@ -204,7 +238,7 @@ function p.navIndex(frame)
     return node.refNode.childHtml
 end
 
-function p.navWidget(frame)    
+function p.navi(frame)    
     mw.log('Lua navWidget ', frame)
     init( frame.args[config] );
 
@@ -244,7 +278,7 @@ function p.navWidget(frame)
         pagina = pagina:gsub("§§btnAll§§", btnHtml )
     end
 
-    local widgetHtml = templateData.widget:gsub("§§rootPage§§",rootNode.page):gsub("§§threadNavi§§", node.refNode.innerHtml .. node.refNode.childHtml ):gsub("§§pagina§§", pagina )
+    local widgetHtml = templateData.widget:gsub("§§rootPage§§",node.root.page):gsub("§§threadNavi§§", node.root.innerHtml .. node.root.childHtml ):gsub("§§pagina§§", pagina )
 
     return widgetHtml
 end
