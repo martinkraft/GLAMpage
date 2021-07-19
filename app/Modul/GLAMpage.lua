@@ -29,12 +29,17 @@ function init(configPage)
     function initNode(node, i, parentNode)
         node.index = i
         node.childCount = 0
-        node.title = mw.title.new(node.page)
-        node.isCurrentPage = mw.title.equals( currentTitle, node.title )
-        node.containsCurrentPage = node.isCurrentPage
+
+        if  node.page then
+            node.title = mw.title.new(node.page)
+            node.isCurrentPage = mw.title.equals( currentTitle, node.title )
+            node.containsCurrentPage = node.isCurrentPage
+        else
+            node.isLabel = true
+        end
+
         --node.isAllPage = false
         node.isLastNode = false
-
         
         if parentNode then
             node.parent = parentNode
@@ -106,17 +111,12 @@ function init(configPage)
     
     function prepareNodeHtml(node, i, parentNode)
 
-        if node.isCurrentPage then
-            node.innerHtml = templateData.threadNaviItemActive
-        else
-            node.innerHtml = templateData.threadNaviItem
-        end
-
-        if isAllPage then
-            node.innerHtml = node.innerHtml:gsub("§§page§§", '#' .. node.name)
-        else
-            node.innerHtml = node.innerHtml:gsub("§§page§§", node.page)
-        end
+        node.innerHtml = 
+            node.isLabel and templateData.threadNaviLabel or
+            node.isCurrentPage and templateData.threadNaviItemActive or 
+            templateData.threadNaviItem
+        
+        node.innerHtml = node.innerHtml:gsub("§§page§§", (isAllPage and '#' or '') .. node.name)        
         node.innerHtml = node.innerHtml:gsub("§§name§§", node.name)
 
         node.childHtml = ''        
@@ -127,11 +127,12 @@ function init(configPage)
         end
 
         local isActive = node.isCurrentPage or node.containsCurrentPage
+        local classes = (isActive and ' active' or '') .. (node.isLabel and ' label' or '')
 
         node.childHtml = (node.childHtml == '') and '' or ('<ul>' .. node.childHtml .. '</ul>')
-        node.outerHtml = '<li' .. (isActive and ' class="active"' or '') ..  '>' .. node.innerHtml .. node.childHtml .. '</li>'
+        node.outerHtml = '<li' .. (classes and ' class="'.. classes ..'"' or '') ..  '>' .. node.innerHtml .. node.childHtml .. '</li>'
 
-        if parentNode then
+        if parentNode and (node.containsCurrentPage or (not node.hidden))  then
             parentNode.childHtml = parentNode.childHtml .. node.outerHtml
         end        
 
@@ -244,6 +245,8 @@ function p.navi(frame)
     local node = currentNode
     local pagina, btnHtml 
 
+    --[[
+
     if node.isAllPage == true then
         pagina = templateData.paginaAll:gsub("§§page§§", refNode.page);
     else
@@ -277,7 +280,9 @@ function p.navi(frame)
         pagina = pagina:gsub("§§btnAll§§", btnHtml )
     end
 
-    local widgetHtml = templateData.widget:gsub("§§rootPage§§",node.root.page):gsub("§§threadNavi§§", node.root.innerHtml .. node.root.childHtml ):gsub("§§pagina§§", pagina )
+    ]]--
+
+    local widgetHtml = templateData.widget:gsub("§§rootPage§§",node.root.page):gsub("§§threadNavi§§", node.root.innerHtml .. node.root.childHtml ) --:gsub("§§pagina§§", pagina )
 
     return widgetHtml
 end

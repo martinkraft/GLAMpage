@@ -203,6 +203,7 @@
       font-family: $font-serif;
       overflow: hidden;
       font-size: $font-size-big;
+      min-height: 12rem;
 
       h2,
       h3,
@@ -354,6 +355,11 @@
     line-height: $line-height-narrow;
     padding: .5rem 1rem;
 
+    >a {
+      // Root ausblenden
+      display: none;
+    }
+
     &-anchor {
       position: fixed;
       top: 0;
@@ -388,6 +394,12 @@
 
     li {
       margin-top: .5rem;
+
+      &.label {
+        >:not(ul) {
+          opacity: $c-opacity-text;
+        }
+      }
     }
 
     &-inner {
@@ -470,8 +482,8 @@
           padding: .5rem 1rem;
           text-align: left;
 
-          >li{
-            >ul{
+          >li {
+            >ul {
               padding-right: 1rem;
             }
           }
@@ -479,17 +491,50 @@
       }
     }
 
+
+
+    @media screen and (max-width:660px) {
+      left: 0;
+    }
+
     @media screen and (max-width:#{$navi-breakpoint - .1px}) {
       background-color: $c-black;
-      left: 0;
+      min-width: 20rem;
+      padding: .5rem 5%;
+
+      //left: 0;
       right: 0;
       overflow: hidden;
-      text-align: center;
+      text-align: left;
       transition: max-height .6s, padding .6s;
       color: $c-white;
       font-size: $font-size-big;
 
       max-height: 100rem;
+
+      >ul>li {
+        //border-top: 1px solid rgba($color: $c-bg, $alpha: .5);
+        padding: .5em 0;
+        margin: 0;
+      }
+
+      li {        
+        &.label{
+          display: none;
+        }
+
+        >* {
+          display: block;
+        }
+
+        li>:not(ul) {
+          padding-left: 1em;
+        }
+
+        li li>:not(ul) {
+          padding-left: 2em;
+        }
+      }
 
       &-anchor:not(:target)~.glam-navi {
         max-height: 0;
@@ -574,7 +619,8 @@
           display: block;
           width: .6em;
           height: .6em;
-          border: 2px solid $c-grey;
+          border: 2px solid currentColor;
+          opacity: $c-opacity-text;
           border-bottom: transparent;
           border-right: transparent;
           transform: rotate(225deg);
@@ -589,8 +635,11 @@
         color: currentColor;
         font-family: sans-serif;
         font-weight: 400;
-        color: $c-grey;
-        text-transform: uppercase;
+        opacity: $c-opacity-text;
+
+        &::after{
+          content:':';
+        }
       }
 
       display: flex;
@@ -614,7 +663,8 @@
           &::after {
             content: "";
             display: block;
-            border: 2px solid $c-grey;
+            border: 2px solid currentColor;
+            opacity: $c-opacity-text;
             border-bottom: transparent;
             border-right: transparent;
             transform: translateY(.5em) rotate(45deg);

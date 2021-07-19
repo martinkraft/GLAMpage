@@ -370,7 +370,8 @@
     background-color: #0088b9;
     font-family: "Linux Libertine", "Georgia", "Times", serif;
     overflow: hidden;
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    min-height: 12rem; }
     .glam-page .glam-header-slide-container h2,
     .glam-page .glam-header-slide-container h3,
     .glam-page .glam-header-slide-container h4,
@@ -483,6 +484,8 @@
     font-size: 1rem;
     line-height: 1.2;
     padding: .5rem 1rem; }
+    .glam-page .glam-navi > a {
+      display: none; }
     .glam-page .glam-navi-anchor {
       position: fixed;
       top: 0; }
@@ -511,6 +514,8 @@
         color: currentColor; }
     .glam-page .glam-navi li {
       margin-top: .5rem; }
+      .glam-page .glam-navi li.label > :not(ul) {
+        opacity: 0.3; }
     .glam-page .glam-navi-inner {
       position: relative;
       z-index: 4;
@@ -570,17 +575,32 @@
           text-align: left; }
           .glam-page .glam-navi > ul > li > ul > li > ul {
             padding-right: 1rem; } }
+    @media screen and (max-width: 660px) {
+      .glam-page .glam-navi {
+        left: 0; } }
     @media screen and (max-width: 1699.9px) {
       .glam-page .glam-navi {
         background-color: #000;
-        left: 0;
+        min-width: 20rem;
+        padding: .5rem 5%;
         right: 0;
         overflow: hidden;
-        text-align: center;
+        text-align: left;
         transition: max-height .6s, padding .6s;
         color: #fff;
         font-size: 1.125rem;
         max-height: 100rem; }
+        .glam-page .glam-navi > ul > li {
+          padding: .5em 0;
+          margin: 0; }
+        .glam-page .glam-navi li.label {
+          display: none; }
+        .glam-page .glam-navi li > * {
+          display: block; }
+        .glam-page .glam-navi li li > :not(ul) {
+          padding-left: 1em; }
+        .glam-page .glam-navi li li li > :not(ul) {
+          padding-left: 2em; }
         .glam-page .glam-navi-anchor:not(:target) ~ .glam-navi {
           max-height: 0;
           padding-top: 0;
@@ -656,7 +676,8 @@
           display: block;
           width: .6em;
           height: .6em;
-          border: 2px solid #eaecf0;
+          border: 2px solid currentColor;
+          opacity: 0.3;
           border-bottom: transparent;
           border-right: transparent;
           transform: rotate(225deg); }
@@ -667,8 +688,9 @@
         color: currentColor;
         font-family: sans-serif;
         font-weight: 400;
-        color: #eaecf0;
-        text-transform: uppercase; }
+        opacity: 0.3; }
+        .glam-page .toc.toc .toctitle h2::after {
+          content: ':'; }
       .glam-page .toc.toc .toctitle > * {
         position: relative; }
         .glam-page .toc.toc .toctitle > *:last-child {
@@ -678,7 +700,8 @@
       .glam-page .toc.toc .toctitle .toctogglespan .toctogglelabel::after {
         content: "";
         display: block;
-        border: 2px solid #eaecf0;
+        border: 2px solid currentColor;
+        opacity: 0.3;
         border-bottom: transparent;
         border-right: transparent;
         transform: translateY(0.5em) rotate(45deg);

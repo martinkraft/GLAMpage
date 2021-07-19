@@ -5,30 +5,36 @@
             "lang": "de",
             "id": "home",
             "children": [{
-                    "name": "für Institutionen",
+                    "name": "Informationen für"
+                }, {
+                    "name": "Institutionen",
                     "page": "Wikipedia:GLAM/Institutionen"
                 },
                 {
-                    "name": "für Freiwillige",
+                    "name": "Freiwillige",
                     "page": "Wikipedia:GLAM/Freiwillige",
                     "children": [{
+                        "name": "Infos für Freiwillige:"
+                    }, {
                         "name": "Wikipedian in Residenz",
                         "page": "Wikipedia:GLAM/Presse"
                     }]
                 },
                 {
-                    "name": "für die Presse",
+                    "name": "die Presse",
                     "page": "Wikipedia:GLAM/Presse",
                     "children": [{
-                            "name": "Pressemeldung 1",
+                            "name": "Pressemeldungen:"
+                        }, {
+                            "name": "Eine ganz tolle Pressemeldung",
                             "page": "Wikipedia:GLAM/Presse 1"
                         },
                         {
-                            "name": "Pressemeldung 2",
+                            "name": "Und noch eine Meldung",
                             "page": "Wikipedia:GLAM/Presse 2"
                         },
                         {
-                            "name": "Pressemeldung 3",
+                            "name": "Mal ganz was anderes",
                             "page": "Wikipedia:GLAM/Presse 3"
                         }
                     ]
@@ -37,6 +43,8 @@
                     "name": "Erfahrungsberichte",
                     "page": "Wikipedia:GLAM/Erfahrungsberichte",
                     "children": [{
+                            "name": "Erfahrungsberichte:"
+                        }, {
                             "name": "Erfahrungsbericht 1",
                             "page": "Wikipedia:GLAM/Case 1"
                         },
@@ -49,6 +57,11 @@
                             "page": "Wikipedia:GLAM/Case 3"
                         }
                     ]
+                },
+                {
+                    "name": "GLAMpage-Vorlagen-Doku",
+                    "page": "Vorlage:GLAMpage/Doku",
+                    "hidden": true
                 }
             ]
         },
@@ -64,9 +77,10 @@
         }
     ],
     "templates": {
-        "widget": "\u003Cdiv class=\"glam-navi\"\u003E§§threadNavi§§\u003C/div\u003E",
+        "widget": "\u003Cdiv class=\"glam-navi\" role=\"navigation\" aria-label=\"GLAM\" \u003E§§threadNavi§§\u003C/div\u003E",
+        "threadNaviLabel": "<span>§§name§§</span>",
         "threadNaviItem": "[[§§page§§|§§name§§]]",
-        "threadNaviItemActive": "\u003Cspan class=\"glam-nav-active\"\u003E[[§§page§§|§§name§§]]\u003C/span\u003E",
+        "threadNaviItemActive": "[[§§page§§|§§name§§]]",
         "pagina": "\u003Cdiv class=\"glam-nav-pagina\"\u003E§§btnLast§§ Seite §§currentPageNo§§ von §§totalPageNo§§ §§btnNext§§ §§btnAll§§\u003C/div\u003E",
         "paginaStart": "\u003Cdiv class=\"glam-nav-pagina\"\u003ETutorial starten §§btnNext§§ §§btnAll§§\u003C/div\u003E",
         "paginaAll": "\u003Cdiv\u003E[[§§page§§|Einzelseiten anzeigen]]\u003C/div\u003E",
