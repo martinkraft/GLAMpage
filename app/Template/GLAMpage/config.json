@@ -77,6 +77,7 @@
         }
     ],
     "templates": {
+        "homeLink": "\u003Cdiv class=\"glam-header-logo\"\u003E[[File:GLAM Logo (DACH) white.svg|145px|class=noviewer|link=§§page§§]]\u003C/div\u003E",
         "widget": "\u003Cdiv class=\"glam-navi\" role=\"navigation\" aria-label=\"GLAM\" \u003E§§threadNavi§§\u003C/div\u003E",
         "threadNaviLabel": "<span>§§name§§</span>",
         "threadNaviItem": "[[§§page§§|§§name§§]]",

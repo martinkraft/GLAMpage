@@ -243,74 +243,26 @@ function p.navi(frame)
     init( frame.args[config] );
 
     local node = currentNode
-    local pagina, btnHtml 
-
-    --[[
-
-    if node.isAllPage == true then
-        pagina = templateData.paginaAll:gsub("§§page§§", refNode.page);
-    else
-        pagina = templateData.pagina
-
-        if node.isRefNode == true then
-            pagina = templateData.paginaStart
-        else
-            pagina = templateData.pagina
-        end  
-        pagina = pagina:gsub("§§totalPageNo§§", node.refNode.childCount ):gsub("§§currentPageNo§§", node.index ) 
-        btnHtml = ''
-        mw.log('node.lastNode:',node,'.',node.lastNode,'|',previousNode)
-        if node.lastNode then
-            btnHtml = templateData.btnLast:gsub("§§page§§", node.lastNode.page ):gsub("§§name§§", node.lastNode.name )
-        end 
-        pagina = pagina:gsub("§§btnLast§§", btnHtml )
-    
-        btnHtml = ''
-        mw.log('node.nextNode:',node,'.',node.nextNode)
-        if not node.isLastNode and node.nextNode then
-            btnHtml = templateData.btnNext:gsub("§§page§§", node.nextNode.page ):gsub("§§name§§", node.nextNode.name )
-        end
-        pagina = pagina:gsub("§§btnNext§§", btnHtml )   
-    
-        btnHtml = ''
-        if node.refNode.all then
-            btnHtml = templateData.btnAll:gsub("§§page§§", node.refNode.all )
-        end
-
-        pagina = pagina:gsub("§§btnAll§§", btnHtml )
-    end
-
-    ]]--
-
     local widgetHtml = templateData.widget:gsub("§§rootPage§§",node.root.page):gsub("§§threadNavi§§", node.root.innerHtml .. node.root.childHtml ) --:gsub("§§pagina§§", pagina )
 
     return widgetHtml
 end
 
-function p.all(frame)
-    mw.log('Lua all ', frame)
+function p.home(frame)
+    mw.log('Lua home ', frame)
     init( frame.args[config] );
-    -- body
-    local html
-    if currentNode then
 
-        html = '<div class="tutorial-article" style="margin-bottom:6em;">' .. getPageContent(refNode, frame) .. '</div>'
-         
-        for childIndex, childNode in pairs( refNode.children ) do
-            html = html .. '<div class="tutorial-article" style="margin-bottom:6em;">' .. getPageContent(childNode, frame) .. '</div>'
-        end
-
-        return html
-    else
-        return "not found"
-    end
+    return currentNode.root.page
 end
 
-function p.isAll(frame)
-    mw.log('Lua isAll ', frame)
+function p.homeLink(frame)
+    mw.log('Lua home ', frame)
     init( frame.args[config] );
-    mw.log('Lua isAll -> ', isAllPage)
-    return isAllPage
+
+    local node = currentNode
+    local homeHtml = templateData.homeLink:gsub("§§page§§",node.root.page)
+
+    return homeHtml
 end
 
 return p
