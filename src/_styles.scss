@@ -15,9 +15,30 @@
   }
 }
 
-// GLAMpage
 
+// GLAMpage
 .glam-page {
+
+  // Generate color classes
+  @each $c-name,
+  $c-value in $c {
+    .c-#{$c-name} {
+      color: $c-value;
+    }
+
+    .bg-#{$c-name} {
+      background-color: $c-value;
+      color: $c-white;
+    }
+  }
+
+  .c-primary{
+    color: $c-primary;
+  }
+  .bg-primary{
+    background-color: $c-primary;
+    color: $c-white;
+  }
 
   font-family: sans-serif;
   color: $c-text;
@@ -208,9 +229,11 @@
       h2,
       h3,
       h4,
-      h5 {
+      h5,
+      h6 {
         font-family: $font-sans;
         color: $c-white;
+        font-size: 1.875rem;
       }
 
       &,
@@ -345,6 +368,17 @@
           }
         }
       }
+    }
+
+    &-text {
+      max-width: 40rem;
+      text-align: right;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-left: auto;
+      width: calc(100% - 7rem);
     }
   }
 
@@ -518,8 +552,8 @@
         margin: 0;
       }
 
-      li {        
-        &.label{
+      li {
+        &.label {
           display: none;
         }
 
@@ -628,50 +662,53 @@
       }
     }
 
-    .toctitle {
+    body:not(.skin-minerva) & {
+      .toctitle {
+        padding: 0;
+        display: flex;
 
-      h2 {
-        font-size: $font-size;
-        color: currentColor;
-        font-family: sans-serif;
-        font-weight: 400;
-        opacity: $c-opacity-text;
+        h2 {
+          font-size: $font-size;
+          color: currentColor;
+          font-family: sans-serif;
+          font-weight: 400;
+          opacity: $c-opacity-text;
 
-        &::after{
-          content:':';
-        }
-      }
-
-      display: flex;
-
-      >* {
-        position: relative;
-
-        &:last-child {
-          margin-left: auto;
-        }
-      }
-
-      .toctogglespan {
-
-        &::before,
-        &::after {
-          content: none;
-        }
-
-        .toctogglelabel {
           &::after {
-            content: "";
-            display: block;
-            border: 2px solid currentColor;
-            opacity: $c-opacity-text;
-            border-bottom: transparent;
-            border-right: transparent;
-            transform: translateY(.5em) rotate(45deg);
-            transform-origin: 33% 33%;
-            transition: all .5s;
-            width: 1em;
-            height: 1em;
+            content: ':';
+          }
+        }
+
+        >* {
+          position: relative;
+
+          &:last-child {
+            margin-left: auto;
+          }
+        }
+
+        .toctogglespan {
+
+
+          &::before,
+          &::after {
+            content: none;
+          }
+
+          .toctogglelabel {
+            &::after {
+              content: "";
+              display: block;
+              border: 2px solid currentColor;
+              opacity: $c-opacity-text;
+              border-bottom: transparent;
+              border-right: transparent;
+              transform: translateY(.5em) rotate(45deg);
+              transform-origin: 33% 33%;
+              transition: all .5s;
+              width: 1em;
+              height: 1em;
+            }
           }
         }
       }

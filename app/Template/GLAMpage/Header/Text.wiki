@@ -1,0 +1,3 @@
+<onlyinclude><div class="glam-header-text {{{classes|}}}"><div class="inner {{{innerclasses|}}}">
+=={{{headline|{{{1|}}}}}}==
+{{{text|{{{2|}}}}}}</div></div data-end-of="glam-header-text"></onlyinclude>

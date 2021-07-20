@@ -1,5 +1,5 @@
 @import 'variables';
 
-$c-primary: $c-green;
+$c-primary: map-get($c, "green");
 
 @import 'styles';
