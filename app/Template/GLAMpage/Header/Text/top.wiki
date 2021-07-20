@@ -1,1 +1,0 @@
-<onlyinclude><div class="glam-header-text {{{classes|}}}"><div class="inner {{{innerclasses|}}}"></onlyinclude></div></div>
