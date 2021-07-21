@@ -32,10 +32,15 @@
     }
   }
 
-  .c-primary{
+  .box {
+    padding: 1em;
+  }
+
+  .c-primary {
     color: $c-primary;
   }
-  .bg-primary{
+
+  .bg-primary {
     background-color: $c-primary;
     color: $c-white;
   }
@@ -96,6 +101,8 @@
     color: $c-primary;
     line-height: $line-height-narrow;
     border-bottom: none;
+    font-weight: normal;
+    font-size: 1.25rem;
 
     .section-links {
       display: none;
@@ -108,6 +115,10 @@
 
   h2 {
     font-size: pxToRem(30px);
+  }
+
+  h3{    
+    font-size: 1.5rem;
   }
 
   body.skin-vector-legacy & {

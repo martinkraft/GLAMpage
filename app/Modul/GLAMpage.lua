@@ -33,6 +33,16 @@ function init(configPage)
         if  node.page then
             node.title = mw.title.new(node.page)
             node.isCurrentPage = mw.title.equals( currentTitle, node.title )
+
+            if not node.isCurrentPage and node.pageAliases then  
+                local ai, a, at              
+                for ai, a in pairs( node.pageAliases ) do
+                    if mw.title.equals( currentTitle, mw.title.new(a) ) then
+                        node.isCurrentPage = true
+                    end
+                end
+            end
+
             node.containsCurrentPage = node.isCurrentPage
         else
             node.isLabel = true
@@ -78,7 +88,8 @@ function init(configPage)
                 if childNode.containsCurrentPage then
                     node.containsCurrentPage = true
                 end
-                if not (childNode.hidden and childNode.containsCurrentPage == false) or showHidden then
+
+                if not (childNode.hidden and not childNode.containsCurrentPage) or showHidden then
                     node.childCount = node.childCount + 1
                     newChildrenArray[node.childCount] = childNode
                 end
@@ -116,7 +127,10 @@ function init(configPage)
             node.isCurrentPage and templateData.threadNaviItemActive or 
             templateData.threadNaviItem
         
-        node.innerHtml = node.innerHtml:gsub("§§page§§", (isAllPage and '#' or '') .. node.name)        
+        if node.page then
+            node.innerHtml = node.innerHtml:gsub("§§page§§", (isAllPage and '#' or '') .. node.page)        
+        end
+        
         node.innerHtml = node.innerHtml:gsub("§§name§§", node.name)
 
         node.childHtml = ''        

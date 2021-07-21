@@ -59,9 +59,28 @@
                     ]
                 },
                 {
-                    "name": "GLAMpage-Vorlagen-Doku",
+                    "name": "Vorlagen-Dokumentation",
                     "page": "Vorlage:GLAMpage/Doku",
-                    "hidden": true
+                    "pageAliases": ["Vorlage:GLAMpage", "Vorlage:GLAMpage/Doku"],
+                    "hidden": true,
+                    "children": [{
+                            "name": "Kopiervorlagen:"
+                        },
+                        {
+                            "name": "Beispielseite Basis",
+                            "page": "Vorlage:GLAMpage/Doku/Demo/Basis"
+                        }, {
+                            "name": "Beispielseite Home",
+                            "page": "Vorlage:GLAMpage/Doku/Demo/Home"
+                        }, {
+                            "name": "Beispielseite Projekt",
+                            "page": "Vorlage:GLAMpage/Doku/Demo/Projekt"
+                        },
+                        {
+                            "name": "Beispielseite Text",
+                            "page": "Vorlage:GLAMpage/Doku/Demo/Text"
+                        }
+                    ]
                 }
             ]
         },

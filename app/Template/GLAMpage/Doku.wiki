@@ -1,0 +1,192 @@
+{{GLAMpage/top}}
+{{GLAMpage/Header/top}}
+{{GLAMpage/Header/Text|GLAMpage Dokumentation}}
+{{GLAMpage/Header/bottom}}
+{{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}{{GLAMpage/Column/top|classes=glam-intro}}
+Unter [[Vorlage:GLAMpage]] findet man einen Satz von Vorlagen, die ein vereinfachten Zusammenbau und ein durchgängiges Erscheinungsbild der GLAM-Seiten ermöglichen sollen. Auf der vorliegenden Seite finden sich Informationen dazu, wie man diese Vorlagen verwendet.
+
+''Diese Dokumentationseiten wurde selbst mit dem Vorlagensatz erstellt.''
+{{GLAMpage/Column/middle}}
+{{GLAMpage/TOC}}
+{{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
+{{GLAMpage/Section/top|classes=bg-grey|innerclasses=glam-grid-marginal}}
+{{GLAMpage/Column/top}}
+==Vorlagen-Systematik==
+{{GLAMpage/Column/middle}}{{GLAMpage/Column/middle}}
+Die [[Vorlage:GLAMpage/top]] bzw. [[Vorlage:GLAMpage/bottom|/bottom]] ist das wichtigste Vorlagen-Paar der Seite der Seite, weil Sie das [[Stylesheet]] einbindet und so das Aussehen steuert. Hier kann auch über einen Parameter <code>color=orange</code> die [[#Farben|Farbigkeit]] der jeweiligen Unterseite eingestellt werden.
+{{GLAMpage/Column/middle}}
+<syntaxhighlight lang="moin">
+{{GLAMpage/top}}
+
+..Alle Inhalte..
+
+{{GLAMpage/bottom>
+</syntaxhighlight>
+{{GLAMpage/Column/middle}}
+Die meisten Vorlagen diese Pakets bestehen aus einem Paar aus einer <code>/top</code> und einer <code>/bottom</code>-Untervorlage, mit der die Inhalten umschlossen und gegliedert werden können. Diese Untervorlagen '''müssen''' immer zusammen verwendet werden. D.h. jeder geöffnete Block muss auch wieder geschlossen werden – sonst gerät die Struktur durcheinander.
+{{GLAMpage/Column/middle}}
+<syntaxhighlight lang="trac-wiki">
+{{GLAMpage/Section/top}}
+
+  {{GLAMpage/Column/top}}
+  {{GLAMpage/Column/bottom}}
+
+  {{GLAMpage/Column/top}}
+  {{GLAMpage/Column/bottom}}
+
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Column/middle}}
+Auf einandere folgende <code>/bottom</code> und <code>/top</code> Bausteine können i.d.R. durch einen oder mehrere <code>/middle</code>-Baustein ersetzt werden, der dieselben Parameter akzeptiert:
+{{GLAMpage/Column/middle}}
+<syntaxhighlight lang="moin">
+{{GLAMpage/Section/top}}
+
+  {{GLAMpage/Column/top}}
+  {{GLAMpage/Column/middle}}
+  {{GLAMpage/Column/bottom}}
+
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Column/middle}}
+Das Aussehen und die Anordnung der Element lässt sich mit Hilfe von CSS-Klassen steuern, die über die Parameter <code>classes</code> (für die äußeren HTML-Elemente) und <code>innerclasses</code> (für die Inneren) gesteuert werden können. Im Beispiel sorgt <code>bg-grey</code> für einen grauen Hintergrund der ganzen Section und <code>wide</code> dafür dass Ihr Inhalt über die volle Breite gezogen wird.
+{{GLAMpage/Column/middle}}
+<syntaxhighlight lang="wikitext">
+{{GLAMpage/Section/top
+ |classes=bg-grey
+ |innerclasses=wide}}
+...
+</syntaxhighlight>
+{{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
+{{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}{{GLAMpage/Column/top}}
+==Farben==
+Es gibt die GLAMpage in verschiedenen Farbversionen. Diese können über den Parameter <code>color</code> in der [[Vorlage:GLAMpage:top]] festgelegt werden.
+<syntaxhighlight lang="moin">
+{{GLAMpage/top|color=cyan}}
+...</syntaxhighlight>
+Zu jeder Farbe gibt es eine CSS-Klasse <code>c-pink</code>, mit der man die Textfarbe, bzw. <code>bg-pink</code>, mit der die Hintergrundfarbe zuweisen kann. Die Hauptfarbe derjeweiligen Seite erhält man mittels <code>c-primary</code> bzw. <code>bg-primary</code>.
+{{GLAMpage/Column/middle}}<div class="color-list"></div>
+{{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
+
+{{GLAMpage/Section/top}}
+==Mehrspaltigkeit==
+Eine responsive mehrspaltige Darstellung lässt sich mit Hilfe verschiedener <code>glam-grid-</code>-CSS-Klassen erzeugen. Diese müssen als Parameter <code>innerclasses</code> an {{Vorlage|GLAMpage/Section/top}} bzw. {{Vorlage|GLAMpage/Section/middle}} übergeben werden. Die Mehrspaltigkeit wirkt sich auf die direkten Unterelemente dieser Vorlagen aus, egal ob diese nun mit {{Vorlage|GLAMpage/Column/top}} oder <code><nowiki><div></nowiki></code> oder irgendeiner anderen Vorlage erzeugt werden.
+{{GLAMpage/Section/middle}}
+===Volle Breite===
+<syntaxhighlight lang="wikitext">
+{{GLAMpage/Section/top}}
+Hauptspalte
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Section/middle}}
+<div class="bg-pink box">Hauptspalte</div>
+{{GLAMpage/Section/middle}}
+===Hauptspalte/Marginalspalte===
+<syntaxhighlight lang="wikitext">
+{{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}
+{{GLAMpage/Column/top}}Hauptspalte{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Marginalspalte{{GLAMpage/Column/bottom}}
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Section/middle|innerclasses=glam-grid-marginal}}
+<div class="bg-orange box">Hauptspalte</div><div class="bg-yellow box">Marginalspalte</div>
+
+{{GLAMpage/Section/middle}}
+===Zweispaltigkeit===
+<syntaxhighlight lang="wikitext">
+{{GLAMpage/Section/top|innerclasses=glam-grid-2}}
+{{GLAMpage/Column/top}}Spalte 1{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 2{{GLAMpage/Column/bottom}}
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Section/middle|innerclasses=glam-grid-2}}
+<div class="bg-cyan box">Spalte 1</div><div class="bg-cyan box">Spalte 2</div>
+
+{{GLAMpage/Section/middle}}
+===Dreisspaltigkeit===
+<syntaxhighlight lang="wikitext">
+{{GLAMpage/Section/top|innerclasses=glam-grid-3}}
+{{GLAMpage/Column/top}}Spalte 1{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 2{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 3{{GLAMpage/Column/bottom}}
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Section/middle|innerclasses=glam-grid-3}}
+<div class="bg-blue box">Spalte 1</div><div class="bg-blue box">Spalte 2</div><div class="bg-blue box">Spalte 3</div>
+
+{{GLAMpage/Section/middle}}
+===Vierspaltigkeit===
+<syntaxhighlight lang="moin">
+{{GLAMpage/Section/top|innerclasses=glam-grid-4}}
+{{GLAMpage/Column/top}}Spalte 1{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 2{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 3{{GLAMpage/Column/bottom}}
+{{GLAMpage/Column/top}}Spalte 4{{GLAMpage/Column/bottom}}
+{{GLAMpage/Section/bottom}}
+</syntaxhighlight>
+{{GLAMpage/Section/middle|innerclasses=glam-grid-4}}
+<div class="bg-violet box">Spalte 1</div><div class="bg-violet box">Spalte 2</div><div class="bg-violet box">Spalte 3</div><div class="bg-violet box">Spalte 4</div>
+{{GLAMpage/Section/bottom}}
+
+{{GLAMpage/Section/top|classes=bg-grey}}
+==Vorlagen==
+Hier eine Übersicht aller Untervorlagen und Stylsheets des GLAMpage-Paket:
+{{Spezial:Präfixindex/Template:GLAMpage}}
+Der Quelltext der Vorlagen wird auf [https://github.com/martinkraft/GLAMpage '''github.com/martinkraft/GLAMpage'''] versioniert. 
+Alle Änderungen an den Vorlagen sollten dort commitet werden. Die CSS-Datei wurden via [[Sass (Stylesheet-Sprache)|Sass]] generiert und sollten ausschließlich auf diesem Wege bearbeitet werden.
+{{GLAMpage/Section/bottom}}
+{{GLAMpage/Section/top}}
+==Header==
+
+{{GLAMpage/Section/middle}}
+===Navigation===
+Die Navigation der Seite wird zentral in einem [[JavaScript Object Notation|JSON-Datei]] gesteuert. Dabei wird die [[Vorlage:GLAMpage/config.json|config.json]] im Vorlagen-Ordner verwendet, es sei denn es wird explizit eine andere Datei angegeben, die dann einen neuen Navigationsbaum erzeugt:
+<syntaxhighlight lang="moin">
+{{GLAMpage/top}}
+{{GLAMpage/Header/top|config=irgend-eine-andere-config.json}}
+</syntaxhighlight>
+In der JSON-Datei wird Navigationsstruktur in einer verschachtelten Liste im Punkt <code>structure</code> festgelegt. Hierbei k
+<syntaxhighlight lang="json">
+{
+    "structure": [{
+            "name": "Seitenname der Hauptseite",
+            "page": "Link auf dem Logo",
+            "lang": "de",
+            "id": "home",
+            "children": [{
+                    "name": "Label das grau in der Seite angezeigt wird"
+                }, {
+                    "name": "Seitenname in der Navi",
+                    "page": "Wikipedia:Link_auf_die_Seite",
+                    "pageAliases": ["alternative", "Seitentitel", "mit gleichem Inhalt"]
+                }, {
+                    "hidden": true,
+                    "name": "Wird nur angezeigt, wenn man sich in diesem Bereich befindet",
+                    "page": "Vorlage:GLAMpage/Doku"
+                }
+            ]
+        }
+    ]
+}
+</syntaxhighlight>
+
+{{GLAMpage/Section/middle}}
+===Text-Header===
+Noch zu schreiben.
+
+{{GLAMpage/Section/middle}}
+===Header-Slideshow===
+Noch zu schreiben.
+
+{{GLAMpage/Section/bottom}}
+{{GLAMpage/Section/top|classes=bg-grey|innerclasses=glam-grid-marginal}}
+{{GLAMpage/Column/top}}
+==Fehler vermeiden==
+Auf Grund der Struktur muss man etwas vorsichtig sein, dass man keine <code><nowiki><div></nowiki></code> offen lässt oder zu früh schließt.
+Insbesondere sollte man folgendes nicht tun:
+* Soweit wie möglich auf Inline-Styles <code>style="color:#00FF00"</code> verzichten.
+* Keine festen Pixel-Angaben <code>40px</code>. Das Layout ist dynamisch und darf nicht zu so fixen Breiten aufgedrückt werden.
+{{GLAMpage/Column/middle}}
+{{GLAMpage/Column/bottom}}
+{{GLAMpage/Section/bottom}}
+{{GLAMpage/bottom}}

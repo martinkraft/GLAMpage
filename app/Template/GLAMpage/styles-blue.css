@@ -11,15 +11,16 @@
 
 .color-list {
   display: flex;
+  width: 100%;
   justify-content: space-evenly;
-  background-image: linear-gradient(180deg, #e4007e 0%, #e4007e 14.28571%, #ff8800 14.28571%, #ff8800 28.57143%, #e6ad00 28.57143%, #e6ad00 42.85714%, #0ea300 42.85714%, #0ea300 57.14286%, #0088b9 57.14286%, #0088b9 71.42857%, #1448a8 71.42857%, #1448a8 85.71429%, #860070 85.71429%, #860070 100%);
+  background-image: linear-gradient(180deg, #e4007e 0%, #e4007e 14.28571%, #ff8800 14.28571%, #ff8800 28.57143%, #F7b700 28.57143%, #F7b700 42.85714%, #0ea300 42.85714%, #0ea300 57.14286%, #0088b9 57.14286%, #0088b9 71.42857%, #1448a8 71.42857%, #1448a8 85.71429%, #860070 85.71429%, #860070 100%);
   color: #fff;
   line-height: 2.5;
   padding: 0 1em; }
   .color-list::after {
-    width: 4em;
+    width: 5em;
     display: block;
-    content: "#e4007e #ff8800 #e6ad00 #0ea300 #0088b9 #1448a8 #860070";
+    content: "#e4007e #ff8800 #F7b700 #0ea300 #0088b9 #1448a8 #860070";
     text-transform: uppercase; }
   .color-list::before {
     width: 4em;
@@ -276,9 +277,9 @@
     background-color: #ff8800;
     color: #fff; }
   .glam-page .c-yellow {
-    color: #e6ad00; }
+    color: #F7b700; }
   .glam-page .bg-yellow {
-    background-color: #e6ad00;
+    background-color: #F7b700;
     color: #fff; }
   .glam-page .c-green {
     color: #0ea300; }
@@ -300,6 +301,8 @@
   .glam-page .bg-violet {
     background-color: #860070;
     color: #fff; }
+  .glam-page .box {
+    padding: 1em; }
   .glam-page .c-primary {
     color: #1448a8; }
   .glam-page .bg-primary {
@@ -338,7 +341,9 @@
     font-family: "Linux Libertine", "Georgia", "Times", serif;
     color: #1448a8;
     line-height: 1.2;
-    border-bottom: none; }
+    border-bottom: none;
+    font-weight: normal;
+    font-size: 1.25rem; }
     .glam-page h2 .section-links,
     .glam-page h3 .section-links,
     .glam-page h4 .section-links,
@@ -351,6 +356,8 @@
       margin-top: 0; }
   .glam-page h2 {
     font-size: 1.875rem; }
+  .glam-page h3 {
+    font-size: 1.5rem; }
   body.skin-vector-legacy .glam-page {
     margin-top: -2.625rem; }
   body.skin-minerva .glam-page {
