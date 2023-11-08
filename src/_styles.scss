@@ -131,6 +131,10 @@
     margin-top: pxToRem(-83px);
   }
 
+  body.skin-vector {
+    &-search-vue {}
+  }
+
   .glam-section {
 
     body:not(.skin-vector-legacy) &:not(.glam-header) {
@@ -169,7 +173,6 @@
         margin-top: 0;
       }
     }
-
   }
 
   .glam-header {
@@ -187,9 +190,10 @@
       left: 0;
       display: block;
       z-index: 2;
+
       padding: 1em;
 
-      >a {
+      >span[typeof]>a {
         display: inline-block;
         position: relative;
 
@@ -261,11 +265,12 @@
       flex: 0 0 100%;
 
       >.slide-image {
+
         display: block;
         overflow: hidden;
         position: relative;
 
-        >a {
+        >span[typeof]>a {
           display: block;
           height: calc(16rem + 26vw);
           max-height: pxToRem(474px);
@@ -398,7 +403,7 @@
 
   .glam-lang,
   .glam-navi {
-    
+
 
     position: absolute;
     top: 0;
@@ -462,26 +467,32 @@
   }
 
   .glam-lang {
-    &, &-trigger{      
-      display: block!important;
+
+    &,
+    &-trigger {
+      display: block !important;
     }
 
-    &-trigger{
+    &-trigger {
 
       @media screen and (max-width:#{$navi-breakpoint - 1px}) {
         right: 4rem;
       }
 
-      >a{
+      >a {
         display: block;
         padding: .5em;
 
-        &:nth-child(2){
+        &:nth-child(2) {
           position: absolute;
-          top:0; left:0; right:0; bottom:0;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
         }
       }
-      img{
+
+      img {
         display: block;
         width: 2.5em;
         height: auto;
@@ -493,10 +504,10 @@
       padding-top: 0;
       padding-bottom: 0;
     }
-    
+
     &-anchor:not(:target)~.glam-lang-trigger {
-      >a:nth-child(2){
-        display:none;
+      >a:nth-child(2) {
+        display: none;
       }
     }
 
@@ -508,14 +519,15 @@
     right: 0;
     overflow: hidden;
     text-align: left;
-    transition: max-height .6s, padding .6s;
+    transition: max-height .6s,
+    padding .6s;
     color: $c-white;
     font-size: $font-size-big;
 
     max-height: 100rem;
-    
+
     &-anchor:target {
-      &~.glam-navi-anchor .glam-navi-off{
+      &~.glam-navi-anchor .glam-navi-off {
         display: block;
       }
     }

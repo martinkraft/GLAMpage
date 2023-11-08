@@ -396,17 +396,17 @@
     display: block;
     z-index: 2;
     padding: 1em; }
-    .glam-page .glam-header-logo > a {
+    .glam-page .glam-header-logo > span[typeof] > a {
       display: inline-block;
       position: relative; }
-      .glam-page .glam-header-logo > a > img {
+      .glam-page .glam-header-logo > span[typeof] > a > img {
         display: block;
         width: 8.125rem;
         height: auto; }
         @media screen and (max-width: 600px) {
-          .glam-page .glam-header-logo > a > img {
+          .glam-page .glam-header-logo > span[typeof] > a > img {
             width: calc(6vw + 5rem); } }
-      .glam-page .glam-header-logo > a::before, .glam-page .glam-header-logo > a::after {
+      .glam-page .glam-header-logo > span[typeof] > a::before, .glam-page .glam-header-logo > span[typeof] > a::after {
         content: '';
         display: block;
         position: absolute;
@@ -422,11 +422,11 @@
         bottom: -600%;
         left: -300%;
         animation-name: slideOpenLeft; }
-      .glam-page .glam-header-logo > a::before {
+      .glam-page .glam-header-logo > span[typeof] > a::before {
         animation-duration: 1.2s;
         animation-delay: .4s;
         transform: rotate(45deg); }
-      .glam-page .glam-header-logo > a::after {
+      .glam-page .glam-header-logo > span[typeof] > a::after {
         animation-delay: .8s;
         opacity: 0.5;
         transform: translateX(1em) rotate(39deg); }
@@ -458,12 +458,12 @@
       display: block;
       overflow: hidden;
       position: relative; }
-      .glam-page .glam-header-slide > .slide-image > a {
+      .glam-page .glam-header-slide > .slide-image > span[typeof] > a {
         display: block;
         height: calc(16rem + 26vw);
         max-height: 29.625rem;
         width: 100%; }
-        .glam-page .glam-header-slide > .slide-image > a > img {
+        .glam-page .glam-header-slide > .slide-image > span[typeof] > a > img {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -622,7 +622,7 @@
     right: 0;
     overflow: hidden;
     text-align: left;
-    transition: max-height .6s, padding .6s;
+    transition: max-height .6s, padding .6s;
     color: #fff;
     font-size: 1.125rem;
     max-height: 100rem; }
