@@ -1,78 +1,90 @@
 {
-    "structure": [{
+    "structure": [
+        {
             "name": "Wiki GLAM",
             "page": "WP:GLAM",
             "lang": "de",
+            "langName": "Deutsch",
             "id": "home",
-            "children": [{
-                    "name": "Informationen für"
-                }, {
-                    "name": "Institutionen",
-                    "page": "Wikipedia:GLAM/Institutionen"
+            "children": [
+                {
+                    "name": "GLAM on Tour",
+                    "page": "Wikipedia:GLAM/GLAM on Tour",
+                    "id": "GLAMonTour"
                 },
                 {
-                    "name": "Freiwillige",
-                    "page": "Wikipedia:GLAM/Freiwillige",
-                    "children": [{
-                        "name": "Infos für Freiwillige:"
-                    }, {
-                        "name": "Wikipedian in Residenz",
-                        "page": "Wikipedia:GLAM/Presse"
-                    }]
+                    "name": "Wikipedianische KulTour",
+                    "page": "Wikipedia:Wikipedianische KulTour"
                 },
                 {
-                    "name": "die Presse",
-                    "page": "Wikipedia:GLAM/Presse",
-                    "children": [{
-                            "name": "Pressemeldungen:"
-                        }, {
-                            "name": "Eine ganz tolle Pressemeldung",
-                            "page": "Wikipedia:GLAM/Presse 1"
+                    "name": "GLAM digital",
+                    "page": "Wikipedia:GLAM/GLAM digital",                    
+                    "id": "GLAMdigital"
+                },
+                {
+                    "name": "Wikimedians in Residence",
+                    "page": "Wikipedia:GLAM/Wikimedian in Residence",
+                    "children": [
+                        {
+                            "name": "FAQ",
+                            "page": "Wikipedia:GLAM/Wikimedian in Residence/FAQ"
                         },
                         {
-                            "name": "Und noch eine Meldung",
-                            "page": "Wikipedia:GLAM/Presse 2"
-                        },
-                        {
-                            "name": "Mal ganz was anderes",
-                            "page": "Wikipedia:GLAM/Presse 3"
+                            "name": "Beispiele",
+                            "page": "Wikipedia:GLAM/Wikimedian in Residence/Beispiele"
                         }
                     ]
                 },
                 {
-                    "name": "Erfahrungsberichte",
-                    "page": "Wikipedia:GLAM/Erfahrungsberichte",
-                    "children": [{
-                            "name": "Erfahrungsberichte:"
-                        }, {
-                            "name": "Erfahrungsbericht 1",
-                            "page": "Wikipedia:GLAM/Case 1"
+                    "name": "Kulturbotschafter",
+                    "page": "Wikipedia:GLAM/Kulturbotschafter",
+                    "children": [
+                        {
+                            "name": "DE \u0026 CH"
                         },
                         {
-                            "name": "Ein toller Erfahrungsbericht",
-                            "page": "User:Interaktionsdesign/GLAM/test"
+                            "name": "Übersicht",
+                            "page": "Wikipedia:GLAM/Kulturbotschafter/Übersicht"
                         },
                         {
-                            "name": "Erfahrungsbericht 3",
-                            "page": "Wikipedia:GLAM/Case 3"
+                            "name": "Institutionen",
+                            "page": "Wikipedia:GLAM/Kulturbotschafter/Wikimedia Deutschland/Institutionen"
+                        },
+                        {
+                            "name": "AT"
+                        },
+                        {
+                            "name": "Bewerbung",
+                            "page": "Wikipedia:Wikimedia Österreich/Wikipedia-Botschafter"
                         }
                     ]
+                },
+                {
+                    "name": "Kontakte",
+                    "page": "Wikipedia:GLAM/Kontakt"
                 },
                 {
                     "name": "Vorlagen-Dokumentation",
                     "page": "Vorlage:GLAMpage/Doku",
-                    "pageAliases": ["Vorlage:GLAMpage", "Vorlage:GLAMpage/Doku"],
+                    "id": "docu",
+                    "pageAliases": [
+                        "Vorlage:GLAMpage",
+                        "Vorlage:GLAMpage/Doku"
+                    ],
                     "hidden": true,
-                    "children": [{
+                    "children": [
+                        {
                             "name": "Kopiervorlagen:"
                         },
                         {
                             "name": "Beispielseite Basis",
                             "page": "Vorlage:GLAMpage/Doku/Demo/Basis"
-                        }, {
+                        },
+                        {
                             "name": "Beispielseite Home",
                             "page": "Vorlage:GLAMpage/Doku/Demo/Home"
-                        }, {
+                        },
+                        {
                             "name": "Beispielseite Projekt",
                             "page": "Vorlage:GLAMpage/Doku/Demo/Projekt"
                         },
@@ -86,19 +98,38 @@
         },
         {
             "lang": "en",
+            "langName": "English",
             "name": "Wiki GLAM",
             "page": ":commons:Commons:GLAM/en",
             "id": "home",
-            "children": [{
-                "name": "for Institutions",
-                "page": "Commons:GLAM/en/Institutions"
-            }]
+            "children": [
+                {
+                    "name": "Template documentation",
+                    "page": ":commons:Template:GLAMpage/Docu",
+                    "id": "docu"
+                }
+            ]
+        },      
+        {
+            "lang": "fr",
+            "langName": "Français",
+            "name": "Wiki GLAM",
+            "page": ":commons:Commons:GLAM/fr",
+            "id": "home",
+            "children": [
+                {
+                    "name": "Documentation du modèle",
+                    "page": ":commons:Template:GLAMpage/Docu/fr",
+                    "id": "docu"
+                }
+            ]
         }
     ],
     "templates": {
         "homeLink": "\u003Cdiv class=\"glam-header-logo\"\u003E[[File:GLAM Logo (DACH) white.svg|145px|class=noviewer|link=§§page§§]]\u003C/div\u003E",
         "widget": "\u003Cdiv class=\"glam-navi\" role=\"navigation\" aria-label=\"GLAM\" \u003E§§threadNavi§§\u003C/div\u003E",
-        "threadNaviLabel": "<span>§§name§§</span>",
+        "widgetLang": "\u003Cdiv class=\"glam-navi\" role=\"navigation\" aria-label=\"GLAM\" \u003E§§threadNavi§§\u003C/div\u003E",
+        "threadNaviLabel": "\u003Cspan\u003E§§name§§\u003C/span\u003E",
         "threadNaviItem": "[[§§page§§|§§name§§]]",
         "threadNaviItemActive": "[[§§page§§|§§name§§]]",
         "pagina": "\u003Cdiv class=\"glam-nav-pagina\"\u003E§§btnLast§§ Seite §§currentPageNo§§ von §§totalPageNo§§ §§btnNext§§ §§btnAll§§\u003C/div\u003E",

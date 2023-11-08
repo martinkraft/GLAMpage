@@ -266,6 +266,8 @@
   color: #000;
   font-size: 1rem;
   line-height: 1.7; }
+  .glam-page .hidden {
+    display: none !important; }
   .glam-page .c-pink {
     color: #e4007e; }
   .glam-page .bg-pink {
@@ -553,19 +555,24 @@
     justify-content: flex-end;
     margin-left: auto;
     width: calc(100% - 7rem); }
+  .glam-page .glam-lang,
   .glam-page .glam-navi {
     position: absolute;
     top: 0;
     font-size: 1rem;
     line-height: 1.2;
     padding: .5rem 1rem; }
-    .glam-page .glam-navi > a {
-      display: none; }
+    .glam-page .glam-lang-anchor,
     .glam-page .glam-navi-anchor {
       position: fixed;
       top: 0; }
+    .glam-page .glam-lang > a,
+    .glam-page .glam-navi > a {
+      display: none; }
+    .glam-page .glam-lang-off,
     .glam-page .glam-navi-off {
       display: none; }
+      .glam-page .glam-lang-off > a,
       .glam-page .glam-navi-off > a {
         position: fixed;
         top: 0;
@@ -573,6 +580,9 @@
         right: 0;
         bottom: 0;
         display: block; }
+    .glam-page .glam-lang ul,
+    .glam-page .glam-lang ol,
+    .glam-page .glam-lang li,
     .glam-page .glam-navi ul,
     .glam-page .glam-navi ol,
     .glam-page .glam-navi li {
@@ -580,6 +590,12 @@
       list-style-image: none;
       padding: 0;
       margin: 0; }
+      .glam-page .glam-lang ul.active > a,
+      .glam-page .glam-lang ul .glam-nav-active > a,
+      .glam-page .glam-lang ol.active > a,
+      .glam-page .glam-lang ol .glam-nav-active > a,
+      .glam-page .glam-lang li.active > a,
+      .glam-page .glam-lang li .glam-nav-active > a,
       .glam-page .glam-navi ul.active > a,
       .glam-page .glam-navi ul .glam-nav-active > a,
       .glam-page .glam-navi ol.active > a,
@@ -587,113 +603,153 @@
       .glam-page .glam-navi li.active > a,
       .glam-page .glam-navi li .glam-nav-active > a {
         color: currentColor; }
+    .glam-page .glam-lang li,
     .glam-page .glam-navi li {
       margin-top: .5rem; }
+      .glam-page .glam-lang li.label > :not(ul),
       .glam-page .glam-navi li.label > :not(ul) {
         opacity: 0.3; }
-    .glam-page .glam-navi-inner {
-      position: relative;
-      z-index: 4;
-      margin-top: 0;
-      margin-bottom: 0; }
-      .glam-page .glam-navi-inner .glam-navi-trigger {
+    .glam-page .glam-lang-trigger,
+    .glam-page .glam-navi-trigger {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      z-index: 3; }
+  .glam-page .glam-lang {
+    background-color: #000;
+    min-width: 20rem;
+    padding: 2em 5%;
+    right: 0;
+    overflow: hidden;
+    text-align: left;
+    transition: max-height .6s, padding .6s;
+    color: #fff;
+    font-size: 1.125rem;
+    max-height: 100rem; }
+    .glam-page .glam-lang, .glam-page .glam-lang-trigger {
+      display: block !important; }
+    @media screen and (max-width: 1699px) {
+      .glam-page .glam-lang-trigger {
+        right: 4rem; } }
+    .glam-page .glam-lang-trigger > a {
+      display: block;
+      padding: .5em; }
+      .glam-page .glam-lang-trigger > a:nth-child(2) {
         position: absolute;
-        right: 1rem;
-        top: 1rem;
-        z-index: 3; }
-        .glam-page .glam-navi-inner .glam-navi-trigger > a {
-          padding: 1rem;
-          box-sizing: content-box; }
-          .glam-page .glam-navi-inner .glam-navi-trigger > a:last-child {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            display: none; }
-          .glam-page .glam-navi-inner .glam-navi-trigger > a:first-child {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            font-size: 1.8rem;
-            width: 1em;
-            height: 1em;
-            background-color: transparent; }
-            .glam-page .glam-navi-inner .glam-navi-trigger > a:first-child::before, .glam-page .glam-navi-inner .glam-navi-trigger > a:first-child::after,
-            .glam-page .glam-navi-inner .glam-navi-trigger > a:first-child > span {
-              content: '';
-              display: block;
-              width: 100%;
-              height: .16em;
-              background-color: #fff;
-              box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.7);
-              transition: all .5s; }
-    @media screen and (min-width: 1700px) {
-      .glam-page .glam-navi {
-        right: 100%;
-        width: 25%;
-        text-align: right; }
-        .glam-page .glam-navi-inner .glam-navi-trigger {
-          display: none; }
-        .glam-page .glam-navi > a {
-          display: none; }
-        .glam-page .glam-navi > ul > li:not(.active) > ul {
-          display: none; }
-        .glam-page .glam-navi > ul > li > ul {
-          position: absolute;
-          top: 0;
-          left: 500%;
-          right: -500%;
-          display: block;
-          padding: .5rem 1rem;
-          text-align: left; }
-          .glam-page .glam-navi > ul > li > ul > li > ul {
-            padding-right: 1rem; } }
-    @media screen and (max-width: 660px) {
-      .glam-page .glam-navi {
-        left: 0; } }
-    @media screen and (max-width: 1699.9px) {
-      .glam-page .glam-navi {
-        background-color: #000;
-        min-width: 20rem;
-        padding: .5rem 5%;
+        top: 0;
+        left: 0;
         right: 0;
-        overflow: hidden;
-        text-align: left;
-        transition: max-height .6s, padding .6s;
-        color: #fff;
-        font-size: 1.125rem;
-        max-height: 100rem; }
-        .glam-page .glam-navi > ul > li {
-          padding: .5em 0;
-          margin: 0; }
-        .glam-page .glam-navi li.label {
-          display: none; }
-        .glam-page .glam-navi li > * {
-          display: block; }
-        .glam-page .glam-navi li li > :not(ul) {
-          padding-left: 1em; }
-        .glam-page .glam-navi li li li > :not(ul) {
-          padding-left: 2em; }
-        .glam-page .glam-navi-anchor:not(:target) ~ .glam-navi {
-          max-height: 0;
-          padding-top: 0;
-          padding-bottom: 0; }
-        .glam-page .glam-navi-anchor:target ~ .glam-navi {
-          padding-top: 2em;
-          padding-bottom: 2em; }
-        .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:last-child {
-          display: block; }
-        .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child::before {
-          transform: translateY(0.42em) rotate(45deg); }
-        .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child > span {
-          transform: rotate(45deg); }
-        .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child::after {
-          transform: translateY(-0.42em) rotate(-45deg);
-          box-shadow: none; }
-        .glam-page .glam-navi-anchor:target .glam-navi-off {
-          display: block; } }
+        bottom: 0; }
+    .glam-page .glam-lang-trigger img {
+      display: block;
+      width: 2.5em;
+      height: auto; }
+    .glam-page .glam-lang-anchor:not(:target) ~ .glam-lang {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0; }
+    .glam-page .glam-lang-anchor:not(:target) ~ .glam-lang-trigger > a:nth-child(2) {
+      display: none; }
+    .glam-page .glam-lang-anchor:target ~ .glam-navi-anchor .glam-navi-off {
+      display: block; }
+  .glam-page .glam-navi-inner {
+    position: relative;
+    z-index: 4;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .glam-page .glam-navi-trigger > a {
+    padding: 1rem;
+    box-sizing: content-box; }
+    .glam-page .glam-navi-trigger > a:last-child {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: none; }
+    .glam-page .glam-navi-trigger > a:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.8rem;
+      width: 1em;
+      height: 1em;
+      background-color: transparent; }
+      .glam-page .glam-navi-trigger > a:first-child::before, .glam-page .glam-navi-trigger > a:first-child::after,
+      .glam-page .glam-navi-trigger > a:first-child > span {
+        content: '';
+        display: block;
+        width: 100%;
+        height: .16em;
+        background-color: #fff;
+        box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.7);
+        transition: all .5s; }
+  @media screen and (min-width: 1700px) {
+    .glam-page .glam-navi {
+      right: 100%;
+      width: 25%;
+      text-align: right; }
+      .glam-page .glam-navi-inner .glam-navi-trigger {
+        display: none; }
+      .glam-page .glam-navi > a {
+        display: none; }
+      .glam-page .glam-navi > ul > li:not(.active) > ul {
+        display: none; }
+      .glam-page .glam-navi > ul > li > ul {
+        position: absolute;
+        top: 0;
+        left: 500%;
+        right: -500%;
+        display: block;
+        padding: .5rem 1rem;
+        text-align: left; }
+        .glam-page .glam-navi > ul > li > ul > li > ul {
+          padding-right: 1rem; } }
+  @media screen and (max-width: 660px) {
+    .glam-page .glam-navi {
+      left: 0; } }
+  @media screen and (max-width: 1699.9px) {
+    .glam-page .glam-navi {
+      background-color: #000;
+      min-width: 20rem;
+      padding: .5rem 5%;
+      right: 0;
+      overflow: hidden;
+      text-align: left;
+      transition: max-height .6s, padding .6s;
+      color: #fff;
+      font-size: 1.125rem;
+      max-height: 100rem; }
+      .glam-page .glam-navi > ul > li {
+        padding: .5em 0;
+        margin: 0; }
+      .glam-page .glam-navi li.label {
+        display: none; }
+      .glam-page .glam-navi li > * {
+        display: block; }
+      .glam-page .glam-navi li li > :not(ul) {
+        padding-left: 1em; }
+      .glam-page .glam-navi li li li > :not(ul) {
+        padding-left: 2em; }
+      .glam-page .glam-navi-anchor:not(:target) ~ .glam-navi {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0; }
+      .glam-page .glam-navi-anchor:target ~ .glam-navi {
+        padding-top: 2em;
+        padding-bottom: 2em; }
+      .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:last-child {
+        display: block; }
+      .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child::before {
+        transform: translateY(0.42em) rotate(45deg); }
+      .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child > span {
+        transform: rotate(45deg); }
+      .glam-page .glam-navi-anchor:target ~ .glam-navi-trigger > a:first-child::after {
+        transform: translateY(-0.42em) rotate(-45deg);
+        box-shadow: none; }
+      .glam-page .glam-navi-anchor:target .glam-navi-off {
+        display: block; } }
   .glam-page .glam-slide-dragger {
     order: -1;
     flex: 0 0 0;

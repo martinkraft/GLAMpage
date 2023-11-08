@@ -15,9 +15,11 @@
   }
 }
 
-
 // GLAMpage
 .glam-page {
+  .hidden {
+    display: none !important;
+  }
 
   // Generate color classes
   @each $c-name,
@@ -56,7 +58,6 @@
   *::after {
     box-sizing: border-box;
   }
-
 
   a {
     color: $c-primary;
@@ -117,7 +118,7 @@
     font-size: pxToRem(30px);
   }
 
-  h3{    
+  h3 {
     font-size: 1.5rem;
   }
 
@@ -393,21 +394,26 @@
     }
   }
 
+  $navi-breakpoint: 1700px;
+
+  .glam-lang,
   .glam-navi {
+    
+
     position: absolute;
     top: 0;
     font-size: $font-size;
     line-height: $line-height-narrow;
     padding: .5rem 1rem;
 
-    >a {
-      // Root ausblenden
-      display: none;
-    }
-
     &-anchor {
       position: fixed;
       top: 0;
+    }
+
+    >a {
+      // Root ausblenden
+      display: none;
     }
 
     &-off {
@@ -447,55 +453,116 @@
       }
     }
 
+    &-trigger {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      z-index: 3;
+    }
+  }
+
+  .glam-lang {
+    &, &-trigger{      
+      display: block!important;
+    }
+
+    &-trigger{
+
+      @media screen and (max-width:#{$navi-breakpoint - 1px}) {
+        right: 4rem;
+      }
+
+      >a{
+        display: block;
+        padding: .5em;
+
+        &:nth-child(2){
+          position: absolute;
+          top:0; left:0; right:0; bottom:0;
+        }
+      }
+      img{
+        display: block;
+        width: 2.5em;
+        height: auto;
+      }
+    }
+
+    &-anchor:not(:target)~.glam-lang {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    
+    &-anchor:not(:target)~.glam-lang-trigger {
+      >a:nth-child(2){
+        display:none;
+      }
+    }
+
+    background-color: $c-black;
+    min-width: 20rem;
+    padding: 2em 5%;
+
+    //left: 0;
+    right: 0;
+    overflow: hidden;
+    text-align: left;
+    transition: max-height .6s, padding .6s;
+    color: $c-white;
+    font-size: $font-size-big;
+
+    max-height: 100rem;
+    
+    &-anchor:target {
+      &~.glam-navi-anchor .glam-navi-off{
+        display: block;
+      }
+    }
+  }
+
+  .glam-navi {
+
     &-inner {
       position: relative;
       z-index: 4;
       margin-top: 0;
       margin-bottom: 0;
+    }
 
+    &-trigger {
+      >a {
+        padding: 1rem;
+        box-sizing: content-box;
 
+        &:last-child {
+          @include cover-parent();
+          display: none;
+        }
 
-      .glam-navi-trigger {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        z-index: 3;
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 1.8rem;
+          width: 1em;
+          height: 1em;
+          background-color: transparent;
 
-        >a {
-          padding: 1rem;
-          box-sizing: content-box;
-
-          &:last-child {
-            @include cover-parent();
-            display: none;
-          }
-
-          &:first-child {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            font-size: 1.8rem;
-            width: 1em;
-            height: 1em;
-            background-color: transparent;
-
-            &::before,
-            &::after,
-            >span {
-              content: '';
-              display: block;
-              width: 100%;
-              height: .16em;
-              background-color: $c-white;
-              box-shadow: 0 0 .3em rgba(0, 0, 0, .7);
-              transition: all .5s;
-            }
+          &::before,
+          &::after,
+          >span {
+            content: '';
+            display: block;
+            width: 100%;
+            height: .16em;
+            background-color: $c-white;
+            box-shadow: 0 0 .3em rgba(0, 0, 0, .7);
+            transition: all .5s;
           }
         }
       }
     }
-
-    $navi-breakpoint: 1700px;
 
     @media screen and (min-width:$navi-breakpoint) {
       right: 100%;

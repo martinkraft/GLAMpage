@@ -4,11 +4,10 @@
 -- The Default is Template:GLAMpage/config.json
 
 -- Helper Functions
-
 -- Local functions and vars
 
 local configData, templateData, rootNode, rootNodes
-local currentTitle, currentNode, refNode, lastNode, nextNode 
+local currentTitle, currentNode, refNode, lastNode, nextNode, langLinks
 local pagesById = {}
 local rootNodesByLang = {}
 local isAllPage
@@ -28,11 +27,13 @@ function findNodeById(node, id)
     if node.children then            
         for childIndex, childNode in pairs( node.children ) do
             idNode = findNodeById(childNode, id)
-            if idNode then return idNode
+            if idNode then 
+                return idNode
+            end
         end
     end
 
-    return nil
+    return idNode
 end
 
 function init(configPage)
@@ -40,8 +41,7 @@ function init(configPage)
     inited = true
 
     -- Functions
-
-    local previousNode
+    local previousNode, node
 
     function initNode(node, i, parentNode)
         node.index = i
@@ -134,9 +134,8 @@ function init(configPage)
             pagesById[node.id][node.root.lang] = node 
         end
 
-        return node;
+        return node
     end
-
     
     function prepareNodeHtml(node, i, parentNode)
 
@@ -168,13 +167,10 @@ function init(configPage)
             parentNode.childHtml = parentNode.childHtml .. node.outerHtml
         end        
 
-        return node;
+        return node
     end
 
-
-    --mw.log('Lua Init')
-
-
+    mw.log('Lua Init')
     -- Processing
 
     currentTitle = mw.title.getCurrentTitle()       
@@ -221,7 +217,7 @@ function getPageContent( node, frame )
     end     
     local source, html
     source = node.title:getContent()
-    html = frame:preprocess( tostring( mw.html.create( "div" ):wikitext( source ) ) )
+    html = frame:preprocess( tostring( mw.html.create( 'div' ):wikitext( source ) ) )
 
     return '<h2>' .. node.name .. '</h2>' .. html
 end
@@ -298,8 +294,39 @@ end
 
 function p.langSwitch(frame)
     mw.log('Lua langSwitch ', frame)
+    init( frame.args[config] );
 
-    local langSwitchHtml = templateData.langSwitch:gsub("§§page§§",node.root.page)
+    if not currentNode then return end
+
+    local idNode
+    local ids = {}
+    local idNo = 0
+    local id
+    local node = currentNode
+    local langSwitchHtml = '<div class="glam-lang-trigger" style="display:none">[[File:OOjs UI icon language-ltr-invert.svg|100px|link=#GLAMlang]][[#GLAM|<span></span>]]</div><div class="glam-lang" style="display:none"><ul>'
+    
+    langLinks = {}
+    
+    repeat       
+        if node.id then
+            table.insert(ids, node.id);    
+            idNo = idNo + 1  
+        end
+        node = node.parent
+    until (not node) 
+
+    id = ids[1];
+    mw.log('id: ' .. (id or 'undefined') .. '/' .. (currentNode.id or 'undefined') ..'/' .. (currentNode.page))
+
+    for rootIndex, rootNode in pairs( rootNodes ) do
+        idNode = (id and findNodeById(rootNode, id)) or rootNode 
+        langLinks[rootNode.langName or rootNode.lang] = idNode.page
+        langSwitchHtml = langSwitchHtml .. '<li>[[' .. idNode.page ..'|'.. (rootNode.langName or rootNode.lang) .. ']]</li>'
+    end
+
+    mw.log( mw.text.jsonEncode( langLinks, mw.text.JSON_PRETTY + mw.text.JSON_PRESERVE_KEYS ) )
+  
+    langSwitchHtml = langSwitchHtml .. '</ul></div>'
 
     return langSwitchHtml
 end
