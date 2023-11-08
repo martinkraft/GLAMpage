@@ -18,6 +18,23 @@ local isLastNode = false
 local showHidden = false
 local inited = false
 
+function findNodeById(node, id)
+    local idNode
+    
+    if  node.id == id then
+        return node
+    end
+            
+    if node.children then            
+        for childIndex, childNode in pairs( node.children ) do
+            idNode = findNodeById(childNode, id)
+            if idNode then return idNode
+        end
+    end
+
+    return nil
+end
+
 function init(configPage)
     if inited then return end
     inited = true
@@ -119,6 +136,7 @@ function init(configPage)
 
         return node;
     end
+
     
     function prepareNodeHtml(node, i, parentNode)
 
@@ -151,7 +169,7 @@ function init(configPage)
         end        
 
         return node;
-    end;
+    end
 
 
     --mw.log('Lua Init')
@@ -178,7 +196,6 @@ function init(configPage)
         if refLang then rootNodesByLang[refLang] = rootNode end
             
         initNode(rootNode, 0, false)
-
     end
 
     if not currentNode then
@@ -277,6 +294,14 @@ function p.homeLink(frame)
     local homeHtml = templateData.homeLink:gsub("§§page§§",node.root.page)
 
     return homeHtml
+end
+
+function p.langSwitch(frame)
+    mw.log('Lua langSwitch ', frame)
+
+    local langSwitchHtml = templateData.langSwitch:gsub("§§page§§",node.root.page)
+
+    return langSwitchHtml
 end
 
 return p
