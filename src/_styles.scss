@@ -115,7 +115,7 @@
   }
 
   h2 {
-    font-size: pxToRem(30px);
+    font-size: 1.875rem;//clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
   }
 
   h3 {
@@ -193,7 +193,7 @@
 
       padding: 1em;
 
-      >span[typeof]>a {
+      >[typeof="mw:File"]>a {
         display: inline-block;
         position: relative;
 
@@ -249,7 +249,7 @@
       h6 {
         font-family: $font-sans;
         color: $c-white;
-        font-size: 1.875rem;
+        font-size: 1.875rem;//clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
       }
 
       &,
@@ -270,7 +270,7 @@
         overflow: hidden;
         position: relative;
 
-        >span[typeof]>a {
+        >[typeof="mw:File"]>a {
           display: block;
           height: calc(16rem + 26vw);
           max-height: pxToRem(474px);
@@ -390,12 +390,14 @@
     &-text {
       max-width: 40rem;
       text-align: right;
-      padding: 2em;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       margin-left: auto;
       width: calc(100% - 7rem);
+      padding: 2em;
+      padding-top: 4em;          
+      line-height: 1.3;
     }
   }
 
@@ -479,7 +481,7 @@
         right: 4rem;
       }
 
-      >a {
+      >[typeof="mw:File"]>a {
         display: block;
         padding: .5em;
 
@@ -569,7 +571,7 @@
             width: 100%;
             height: .16em;
             background-color: $c-white;
-            box-shadow: 0 0 .3em rgba(0, 0, 0, .7);
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .5);
             transition: all .5s;
           }
         }
@@ -854,7 +856,7 @@
     background-color: $c-bg;
 
 
-    >a {
+    >[typeof="mw:File"]>a {
       display: block;
       padding: 100% 0 0;
       width: 100%;
