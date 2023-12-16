@@ -13,19 +13,19 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  background-image: linear-gradient(180deg, #e4007e 0%, #e4007e 14.28571%, #ff8800 14.28571%, #ff8800 28.57143%, #F7b700 28.57143%, #F7b700 42.85714%, #0ea300 42.85714%, #0ea300 57.14286%, #0088b9 57.14286%, #0088b9 71.42857%, #1448a8 71.42857%, #1448a8 85.71429%, #860070 85.71429%, #860070 100%);
+  background-image: linear-gradient(180deg, #e4007e 0%, #e4007e 12.5%, #ff8800 12.5%, #ff8800 25%, #F7b700 25%, #F7b700 37.5%, #0ea300 37.5%, #0ea300 50%, #003300 50%, #003300 62.5%, #0088b9 62.5%, #0088b9 75%, #1448a8 75%, #1448a8 87.5%, #860070 87.5%, #860070 100%);
   color: #fff;
   line-height: 2.5;
   padding: 0 1em; }
   .color-list::after {
     width: 5em;
     display: block;
-    content: "#e4007e #ff8800 #F7b700 #0ea300 #0088b9 #1448a8 #860070";
+    content: "#e4007e #ff8800 #F7b700 #0ea300 #003300 #0088b9 #1448a8 #860070";
     text-transform: uppercase; }
   .color-list::before {
     width: 4em;
     display: block;
-    content: "pink orange yellow green cyan blue violet"; }
+    content: "pink orange yellow green fordgreen cyan blue violet"; }
 
 @keyframes slide-dragger-ani-2 {
   0% {
@@ -287,6 +287,11 @@
     color: #0ea300; }
   .glam-page .bg-green {
     background-color: #0ea300;
+    color: #fff; }
+  .glam-page .c-fordgreen {
+    color: #003300; }
+  .glam-page .bg-fordgreen {
+    background-color: #003300;
     color: #fff; }
   .glam-page .c-cyan {
     color: #0088b9; }
@@ -652,6 +657,8 @@
       padding-bottom: 0; }
     .glam-page .glam-lang-anchor:not(:target) ~ .glam-lang-trigger > a:nth-child(2) {
       display: none; }
+    .glam-page .glam-lang a {
+      color: #e4007e; }
     .glam-page .glam-lang-anchor:target ~ .glam-navi-anchor .glam-navi-off {
       display: block; }
   .glam-page .glam-navi-inner {
@@ -723,6 +730,8 @@
       color: #fff;
       font-size: 1.125rem;
       max-height: 100rem; }
+      .glam-page .glam-navi a {
+        color: #e4007e; }
       .glam-page .glam-navi > ul > li {
         padding: .5em 0;
         margin: 0; }

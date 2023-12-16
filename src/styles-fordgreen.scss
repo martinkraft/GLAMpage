@@ -1,0 +1,4 @@
+@import 'variables';
+$c-primary: map-get($c, "fordgreen");
+$c-primary-neg: #489848;
+@import 'styles';

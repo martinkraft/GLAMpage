@@ -2,9 +2,14 @@
 |blue= <templatestyles src="Template:GLAMpage/styles-blue.css" />
 |cyan= <templatestyles src="Template:GLAMpage/styles-cyan.css" />
 |green= <templatestyles src="Template:GLAMpage/styles-green.css" />
+|fordgreen= <templatestyles src="Template:GLAMpage/styles-fordgreen.css" />
 |orange= <templatestyles src="Template:GLAMpage/styles-orange.css" />
 |yellow= <templatestyles src="Template:GLAMpage/styles-yellow.css" />
 |pink= <templatestyles src="Template:GLAMpage/styles-pink.css" />
 |#default= <templatestyles src="Template:GLAMpage/styles-pink.css" />
-}}__NOTOC__ __NOEDITSECTION__<div class="glam-page"></onlyinclude>
+}}__NOTOC__ __NOEDITSECTION__<div class="glam-page"></onlyinclude><noinclude>
 </div>
+Parameter:
+* <code>color</code>: siehe [[Vorlage:GLAMpage/Doku|GLAMpage-Dokumentation]] <div style="width: fit-content;" class="color-list"></div>
+* <code>editsection</code>: Schalter, um die voreingestellte Seiteneigenschaft {{"|noeditsection}} unwirksam zu machen; z.&nbsp;B. mittels <code>editsection=yes</code>
+</noinclude>

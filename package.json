@@ -4,7 +4,8 @@
   "description": "MediaWiki Template for GLAMpages",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch ./src/ -o ./app/Template/GLAMpage/"
+    "scss-watch": "node-sass --watch ./src/ -o ./app/Template/GLAMpage/",
+    "scss": "node-sass ./src/ -o ./app/Template/GLAMpage/"
   },
   "author": "Martin Kraft",
   "license": "MIT",

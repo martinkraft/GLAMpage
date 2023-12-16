@@ -311,9 +311,9 @@
   .glam-page .box {
     padding: 1em; }
   .glam-page .c-primary {
-    color: #1448a8; }
+    color: #003300; }
   .glam-page .bg-primary {
-    background-color: #1448a8;
+    background-color: #003300;
     color: #fff; }
   .glam-page,
   .glam-page *,
@@ -321,7 +321,7 @@
   .glam-page *::after {
     box-sizing: border-box; }
   .glam-page a {
-    color: #1448a8; }
+    color: #003300; }
     .glam-page a:not(:hover) {
       text-decoration: none; }
     .glam-page a .external {
@@ -346,7 +346,7 @@
   .glam-page h4,
   .glam-page h5 {
     font-family: "Linux Libertine", "Georgia", "Times", serif;
-    color: #1448a8;
+    color: #003300;
     line-height: 1.2;
     border-bottom: none;
     font-weight: normal;
@@ -420,7 +420,7 @@
         bottom: 0;
         right: 0;
         z-index: -1;
-        background-color: #1448a8;
+        background-color: #003300;
         transform-origin: 100% 12.5%;
         top: -100%;
         right: -66%;
@@ -438,7 +438,7 @@
   .glam-page .glam-header-slide-container {
     display: flex;
     width: 100%;
-    background-color: #1448a8;
+    background-color: #003300;
     font-family: "Linux Libertine", "Georgia", "Times", serif;
     overflow: hidden;
     font-size: 1.125rem;
@@ -455,7 +455,7 @@
     .glam-page .glam-header-slide-container a {
       color: #fff; }
   .glam-page .glam-header-slide {
-    background-color: #1448a8;
+    background-color: #003300;
     overflow: hidden;
     position: relative;
     flex: 0 0 100%; }
@@ -496,7 +496,7 @@
         bottom: 0;
         right: 0;
         z-index: -1;
-        background-color: #1448a8;
+        background-color: #003300;
         animation-name: slideOpenRight;
         transform-origin: 33% 0;
         top: 0;
@@ -658,7 +658,7 @@
     .glam-page .glam-lang-anchor:not(:target) ~ .glam-lang-trigger > a:nth-child(2) {
       display: none; }
     .glam-page .glam-lang a {
-      color: #1448a8; }
+      color: #489848; }
     .glam-page .glam-lang-anchor:target ~ .glam-navi-anchor .glam-navi-off {
       display: block; }
   .glam-page .glam-navi-inner {
@@ -731,7 +731,7 @@
       font-size: 1.125rem;
       max-height: 100rem; }
       .glam-page .glam-navi a {
-        color: #1448a8; }
+        color: #489848; }
       .glam-page .glam-navi > ul > li {
         padding: .5em 0;
         margin: 0; }
@@ -929,7 +929,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: #1448a8;
+      background-color: #003300;
       transform-origin: 0 0;
       transform: translateX(-3em) skew(-30deg);
       z-index: -1; }

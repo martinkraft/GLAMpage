@@ -1,5 +1,7 @@
-// Animations
+$c-primary: map-get($c, "pink")!default;
+$c-primary-neg: $c-primary!default;
 
+// Animations
 @for $i from 2 through $slide-max {
 
   @keyframes slide-dragger-ani-#{$i} {
@@ -514,6 +516,10 @@
     }
 
     background-color: $c-black;
+    a{
+      color: $c-primary-neg;
+    }
+
     min-width: 20rem;
     padding: 2em 5%;
 
@@ -617,14 +623,15 @@
       }
     }
 
-
-
     @media screen and (max-width:660px) {
       left: 0;
     }
 
     @media screen and (max-width:#{$navi-breakpoint - .1px}) {
       background-color: $c-black;
+      a{
+        color: $c-primary-neg;
+      }
       min-width: 20rem;
       padding: .5rem 5%;
 
