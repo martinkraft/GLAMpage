@@ -19,6 +19,8 @@ $c-primary-neg: $c-primary!default;
 
 // GLAMpage
 .glam-page {
+  clear: both;
+
   .hidden {
     display: none !important;
   }

@@ -296,7 +296,9 @@ function p.langSwitch(frame)
     mw.log('Lua langSwitch ', frame)
     init( frame.args[config] );
 
-    if not currentNode then return end
+    if not currentNode or #rootNodes <= 1 then
+        return 
+    end
 
     local idNode
     local ids = {}
