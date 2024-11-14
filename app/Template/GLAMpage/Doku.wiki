@@ -3,9 +3,9 @@
 {{GLAMpage/Header/Text|GLAMpage Dokumentation}}
 {{GLAMpage/Header/bottom}}
 {{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}{{GLAMpage/Column/top|classes=glam-intro}}
-Unter [[Vorlage:GLAMpage]] findet man einen Satz von Vorlagen, die ein vereinfachten Zusammenbau und ein durchgängiges Erscheinungsbild der GLAM-Seiten ermöglichen sollen. Auf der vorliegenden Seite finden sich Informationen dazu, wie man diese Vorlagen verwendet.
+Unter [[Vorlage:GLAMpage]] findet man einen Satz von Vorlagen, die einen vereinfachten Zusammenbau und ein durchgängiges Erscheinungsbild der GLAM-Seiten ermöglichen sollen. Auf der vorliegenden Seite finden sich Informationen dazu, wie man diese Vorlagen verwendet.
 
-''Diese Dokumentationseiten wurde selbst mit dem Vorlagensatz erstellt.''
+''Diese Dokumentationseite wurde selbst mit dem Vorlagensatz erstellt.''
 {{GLAMpage/Column/middle}}
 {{GLAMpage/TOC}}
 {{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
@@ -13,17 +13,17 @@ Unter [[Vorlage:GLAMpage]] findet man einen Satz von Vorlagen, die ein vereinfac
 {{GLAMpage/Column/top}}
 ==Vorlagen-Systematik==
 {{GLAMpage/Column/middle}}{{GLAMpage/Column/middle}}
-Die [[Vorlage:GLAMpage/top]] bzw. [[Vorlage:GLAMpage/bottom|/bottom]] ist das wichtigste Vorlagen-Paar der Seite der Seite, weil Sie das [[Stylesheet]] einbindet und so das Aussehen steuert. Hier kann auch über einen Parameter <code>color=orange</code> die [[#Farben|Farbigkeit]] der jeweiligen Unterseite eingestellt werden.
+Die [[Vorlage:GLAMpage/top]] bzw. [[Vorlage:GLAMpage/bottom|/bottom]] ist das wichtigste Vorlagen-Paar der Seite, weil Sie das [[Stylesheet]] einbindet und so das Aussehen steuert. Hier kann auch über einen Parameter <code>color=orange</code> die [[#Farben|Farbigkeit]] der jeweiligen Unterseite eingestellt werden.
 {{GLAMpage/Column/middle}}
 <syntaxhighlight lang="moin">
 {{GLAMpage/top}}
 
 ..Alle Inhalte..
 
-{{GLAMpage/bottom>
+{{GLAMpage/bottom}}
 </syntaxhighlight>
 {{GLAMpage/Column/middle}}
-Die meisten Vorlagen diese Pakets bestehen aus einem Paar aus einer <code>/top</code> und einer <code>/bottom</code>-Untervorlage, mit der die Inhalten umschlossen und gegliedert werden können. Diese Untervorlagen '''müssen''' immer zusammen verwendet werden. D.h. jeder geöffnete Block muss auch wieder geschlossen werden – sonst gerät die Struktur durcheinander.
+Die meisten Vorlagen diese Pakets bestehen aus einem Paar aus einer <code>/top</code>- und einer <code>/bottom</code>-Untervorlage, mit der die Inhalten umschlossen und gegliedert werden können. Diese Untervorlagen '''müssen''' immer zusammen verwendet werden. D.&nbsp;h. jeder geöffnete Block muss auch wieder geschlossen werden – sonst gerät die Struktur durcheinander.
 {{GLAMpage/Column/middle}}
 <syntaxhighlight lang="trac-wiki">
 {{GLAMpage/Section/top}}
@@ -37,7 +37,7 @@ Die meisten Vorlagen diese Pakets bestehen aus einem Paar aus einer <code>/top</
 {{GLAMpage/Section/bottom}}
 </syntaxhighlight>
 {{GLAMpage/Column/middle}}
-Auf einandere folgende <code>/bottom</code> und <code>/top</code> Bausteine können i.d.R. durch einen oder mehrere <code>/middle</code>-Baustein ersetzt werden, der dieselben Parameter akzeptiert:
+Auf einander folgende <code>/bottom</code>- und <code>/top</code>-Bausteine können i.d.R. durch einen oder mehrere <code>/middle</code>-Baustein ersetzt werden, der dieselben Parameter akzeptiert:
 {{GLAMpage/Column/middle}}
 <syntaxhighlight lang="moin">
 {{GLAMpage/Section/top}}
@@ -49,9 +49,9 @@ Auf einandere folgende <code>/bottom</code> und <code>/top</code> Bausteine kön
 {{GLAMpage/Section/bottom}}
 </syntaxhighlight>
 {{GLAMpage/Column/middle}}
-Das Aussehen und die Anordnung der Element lässt sich mit Hilfe von CSS-Klassen steuern, die über die Parameter <code>classes</code> (für die äußeren HTML-Elemente) und <code>innerclasses</code> (für die Inneren) gesteuert werden können. Im Beispiel sorgt <code>bg-grey</code> für einen grauen Hintergrund der ganzen Section und <code>wide</code> dafür dass Ihr Inhalt über die volle Breite gezogen wird.
+Das Aussehen und die Anordnung der Elemente lässt sich mit Hilfe von CSS-Klassen steuern, die über die Parameter <code>classes</code> (für die äußeren HTML-Elemente) und <code>innerclasses</code> (für die inneren) gesteuert werden können. Im Beispiel sorgt <code>bg-grey</code> für einen grauen Hintergrund der ganzen Section und <code>wide</code> dafür dass ihr Inhalt über die volle Breite gezogen wird.
 {{GLAMpage/Column/middle}}
-<syntaxhighlight lang="wikitext">
+<syntaxhighlight lang="text">
 {{GLAMpage/Section/top
  |classes=bg-grey
  |innerclasses=wide}}
@@ -60,11 +60,22 @@ Das Aussehen und die Anordnung der Element lässt sich mit Hilfe von CSS-Klassen
 {{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
 {{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}{{GLAMpage/Column/top}}
 ==Farben==
-Es gibt die GLAMpage in verschiedenen Farbversionen. Diese können über den Parameter <code>color</code> in der [[Vorlage:GLAMpage:top]] festgelegt werden.
+Es gibt die GLAMpage in verschiedenen Farbversionen. Diese können über den Parameter <code>color</code> in der Vorlage {{Vorlage|GLAMpage:top}} festgelegt werden.
 <syntaxhighlight lang="moin">
 {{GLAMpage/top|color=cyan}}
 ...</syntaxhighlight>
-Zu jeder Farbe gibt es eine CSS-Klasse <code>c-pink</code>, mit der man die Textfarbe, bzw. <code>bg-pink</code>, mit der die Hintergrundfarbe zuweisen kann. Die Hauptfarbe derjeweiligen Seite erhält man mittels <code>c-primary</code> bzw. <code>bg-primary</code>.
+Zu jeder Farbe gibt es eine CSS-Klasse <code>c-pink</code>, mit der man die Textfarbe, bzw. <code>bg-pink</code>, mit der die Hintergrundfarbe zuweisen kann. Die Hauptfarbe der jeweiligen Seite erhält man mittels <code>c-primary</code> bzw. <code>bg-primary</code>.
+
+Die Farben werden bisher wie folgt verwendet:
+* <span class="c-pink">'''Dokumentation:''' Farbschema pink #E4007E</span>
+* <span class="c-orange">'''KulTour und Kulturbotschaft:''' Farbschema orange #FF8800</span>
+* <span class="c-yellow">'''GLAM on Tour:''' Farbschema yellow #F29F00</span>
+* <span class="c-green">'''GLAM digital:''' Farbschema green #0EA300</span>
+* <span class="c-fordgreen">'''GLAM im Alpenraum:''' Farbschema fordgreen #003300</span>
+* <span class="c-cyan">'''Treffen:''' Farbschema cyan #0088B9</span>
+* <span class="c-blue">'''Kuwiki:''' Farbschema blue #1448A8</span>
+* <span class="c-violet">'''Kooperationen, WiR:''' Farbschema violet #860070</span>
+
 {{GLAMpage/Column/middle}}<div class="color-list"></div>
 {{GLAMpage/Column/bottom}}{{GLAMpage/Section/bottom}}
 
@@ -73,7 +84,7 @@ Zu jeder Farbe gibt es eine CSS-Klasse <code>c-pink</code>, mit der man die Text
 Eine responsive mehrspaltige Darstellung lässt sich mit Hilfe verschiedener <code>glam-grid-</code>-CSS-Klassen erzeugen. Diese müssen als Parameter <code>innerclasses</code> an {{Vorlage|GLAMpage/Section/top}} bzw. {{Vorlage|GLAMpage/Section/middle}} übergeben werden. Die Mehrspaltigkeit wirkt sich auf die direkten Unterelemente dieser Vorlagen aus, egal ob diese nun mit {{Vorlage|GLAMpage/Column/top}} oder <code><nowiki><div></nowiki></code> oder irgendeiner anderen Vorlage erzeugt werden.
 {{GLAMpage/Section/middle}}
 ===Volle Breite===
-<syntaxhighlight lang="wikitext">
+<syntaxhighlight lang="text">
 {{GLAMpage/Section/top}}
 Hauptspalte
 {{GLAMpage/Section/bottom}}
@@ -82,7 +93,7 @@ Hauptspalte
 <div class="bg-pink box">Hauptspalte</div>
 {{GLAMpage/Section/middle}}
 ===Hauptspalte/Marginalspalte===
-<syntaxhighlight lang="wikitext">
+<syntaxhighlight lang="text">
 {{GLAMpage/Section/top|innerclasses=glam-grid-marginal}}
 {{GLAMpage/Column/top}}Hauptspalte{{GLAMpage/Column/bottom}}
 {{GLAMpage/Column/top}}Marginalspalte{{GLAMpage/Column/bottom}}
@@ -93,7 +104,7 @@ Hauptspalte
 
 {{GLAMpage/Section/middle}}
 ===Zweispaltigkeit===
-<syntaxhighlight lang="wikitext">
+<syntaxhighlight lang="text">
 {{GLAMpage/Section/top|innerclasses=glam-grid-2}}
 {{GLAMpage/Column/top}}Spalte 1{{GLAMpage/Column/bottom}}
 {{GLAMpage/Column/top}}Spalte 2{{GLAMpage/Column/bottom}}
@@ -104,7 +115,7 @@ Hauptspalte
 
 {{GLAMpage/Section/middle}}
 ===Dreisspaltigkeit===
-<syntaxhighlight lang="wikitext">
+<syntaxhighlight lang="text">
 {{GLAMpage/Section/top|innerclasses=glam-grid-3}}
 {{GLAMpage/Column/top}}Spalte 1{{GLAMpage/Column/bottom}}
 {{GLAMpage/Column/top}}Spalte 2{{GLAMpage/Column/bottom}}
@@ -132,8 +143,8 @@ Hauptspalte
 ==Vorlagen==
 Hier eine Übersicht aller Untervorlagen und Stylsheets des GLAMpage-Paket:
 {{Spezial:Präfixindex/Template:GLAMpage}}
-Der Quelltext der Vorlagen wird auf [https://github.com/martinkraft/GLAMpage '''github.com/martinkraft/GLAMpage'''] versioniert. 
-Alle Änderungen an den Vorlagen sollten dort commitet werden. Die CSS-Datei wurden via [[Sass (Stylesheet-Sprache)|Sass]] generiert und sollten ausschließlich auf diesem Wege bearbeitet werden.
+Der Quelltext der Vorlagen wird auf [https://github.com/martinkraft/GLAMpage '''github.com/martinkraft/GLAMpage'''] versioniert.
+Alle Änderungen an den Vorlagen sollten dort commitet werden. Die CSS-Dateien wurden via [[Sass (Stylesheet-Sprache)|Sass]] generiert und sollten ausschließlich auf diesem Wege bearbeitet werden.
 {{GLAMpage/Section/bottom}}
 {{GLAMpage/Section/top}}
 ==Header==
@@ -145,7 +156,7 @@ Die Navigation der Seite wird zentral in einem [[JavaScript Object Notation|JSON
 {{GLAMpage/top}}
 {{GLAMpage/Header/top|config=irgend-eine-andere-config.json}}
 </syntaxhighlight>
-In der JSON-Datei wird Navigationsstruktur in einer verschachtelten Liste im Punkt <code>structure</code> festgelegt. Hierbei k
+In der JSON-Datei wird die Navigationsstruktur in einer verschachtelten Liste im Punkt <code>structure</code> festgelegt. Hierbei ...
 <syntaxhighlight lang="json">
 {
     "structure": [{

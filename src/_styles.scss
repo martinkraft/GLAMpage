@@ -1,5 +1,5 @@
-$c-primary: map-get($c, "pink")!default;
-$c-primary-neg: $c-primary!default;
+$c-primary: map-get($c, "pink") !default;
+$c-primary-neg: $c-primary !default;
 
 // Animations
 @for $i from 2 through $slide-max {
@@ -20,9 +20,46 @@ $c-primary-neg: $c-primary!default;
 // GLAMpage
 .glam-page {
   clear: both;
+  background-color: $c-white;
 
   .hidden {
     display: none !important;
+  }
+
+  figure[typeof~="mw:File/Thumb"],
+  figure[typeof~="mw:File/Frame"] {
+    border: none;
+    padding: 0;
+
+    >* {
+      border: none;
+      padding: 0;
+      background-color: $c-bg;
+    }
+
+    >:not(figcaption){
+       > .mw-file-element.mw-file-element {
+      margin: 0;
+      border: none;
+      display: block;
+      max-width: 100%;
+      width: 100%;
+    }
+    >.mw-tmh-player {
+      margin:0;
+      video{
+        margin:0;
+        width:100%;
+        height:auto;
+        border: none;
+      }
+    }
+  }
+
+    >figcaption {
+      padding: .3em .5em .5em;
+      hyphens: auto;
+    }
   }
 
   // Generate color classes
@@ -119,7 +156,7 @@ $c-primary-neg: $c-primary!default;
   }
 
   h2 {
-    font-size: 1.875rem;//clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
+    font-size: 1.875rem; //clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
   }
 
   h3 {
@@ -153,6 +190,13 @@ $c-primary-neg: $c-primary!default;
     &.bg-grey,
     &.glam-header {
       background-color: $c-bg;
+
+      figure[typeof~="mw:File/Thumb"],
+      figure[typeof~="mw:File/Frame"] {
+        >*{
+          background-color: $c-white;
+        }
+      }
     }
 
     &.bg-grey {
@@ -253,7 +297,7 @@ $c-primary-neg: $c-primary!default;
       h6 {
         font-family: $font-sans;
         color: $c-white;
-        font-size: 1.875rem;//clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
+        font-size: 1.875rem; //clamp(1.6rem, calc(0.8rem + 1.2vw), 2.2rem);
       }
 
       &,
@@ -400,7 +444,7 @@ $c-primary-neg: $c-primary!default;
       margin-left: auto;
       width: calc(100% - 7rem);
       padding: 2em;
-      padding-top: 4em;          
+      padding-top: 4em;
       line-height: 1.3;
     }
   }
@@ -518,7 +562,8 @@ $c-primary-neg: $c-primary!default;
     }
 
     background-color: $c-black;
-    a{
+
+    a {
       color: $c-primary-neg;
     }
 
@@ -586,6 +631,7 @@ $c-primary-neg: $c-primary!default;
       }
     }
 
+    /*
     @media screen and (min-width:$navi-breakpoint) {
       right: 100%;
       width: 25%;
@@ -624,92 +670,97 @@ $c-primary-neg: $c-primary!default;
         }
       }
     }
+    */
 
     @media screen and (max-width:660px) {
       left: 0;
     }
 
-    @media screen and (max-width:#{$navi-breakpoint - .1px}) {
-      background-color: $c-black;
-      a{
-        color: $c-primary-neg;
-      }
-      min-width: 20rem;
-      padding: .5rem 5%;
+    //@media screen and (max-width:#{$navi-breakpoint - .1px}) {
+    background-color: $c-black;
 
-      //left: 0;
-      right: 0;
-      overflow: hidden;
-      text-align: left;
-      transition: max-height .6s, padding .6s;
-      color: $c-white;
-      font-size: $font-size-big;
+    a {
+      color: $c-primary-neg;
+    }
 
-      max-height: 100rem;
+    min-width: 20rem;
+    padding: .5rem 5%;
 
-      >ul>li {
-        //border-top: 1px solid rgba($color: $c-bg, $alpha: .5);
-        padding: .5em 0;
-        margin: 0;
-      }
+    //left: 0;
+    right: 0;
+    overflow: hidden;
+    text-align: left;
+    transition: max-height .6s,
+    padding .6s;
+    color: $c-white;
+    font-size: $font-size-big;
 
-      li {
-        &.label {
-          display: none;
-        }
+    max-height: 100rem;
 
-        >* {
-          display: block;
-        }
+    >ul>li {
+      //border-top: 1px solid rgba($color: $c-bg, $alpha: .5);
+      padding: .5em 0;
+      margin: 0;
+    }
 
-        li>:not(ul) {
-          padding-left: 1em;
-        }
-
-        li li>:not(ul) {
-          padding-left: 2em;
-        }
+    li {
+      &.label {
+        display: none;
       }
 
-      &-anchor:not(:target)~.glam-navi {
-        max-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+      >* {
+        display: block;
       }
 
-      &-anchor:target {
-        &~.glam-navi {
-          padding-top: 2em;
-          padding-bottom: 2em;
-        }
+      li>:not(ul) {
+        padding-left: 1em;
+      }
 
-        &~.glam-navi-trigger {
-          &>a:last-child {
-            display: block;
-          }
-
-          &>a:first-child {
-            &::before {
-              transform: translateY(.42em) rotate(45deg);
-            }
-
-            &>span {
-              transform: rotate(45deg);
-            }
-
-            &::after {
-              transform: translateY(-.42em) rotate(-45deg);
-              box-shadow: none;
-            }
-          }
-
-        }
-
-        .glam-navi-off {
-          display: block;
-        }
+      li li>:not(ul) {
+        padding-left: 2em;
       }
     }
+
+    &-anchor:not(:target)~.glam-navi {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &-anchor:target {
+      &~.glam-navi {
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+
+      &~.glam-navi-trigger {
+        &>a:last-child {
+          display: block;
+        }
+
+        &>a:first-child {
+          &::before {
+            transform: translateY(.42em) rotate(45deg);
+          }
+
+          &>span {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: translateY(-.42em) rotate(-45deg);
+            box-shadow: none;
+          }
+        }
+
+      }
+
+      .glam-navi-off {
+        display: block;
+      }
+    }
+
+    //}
   }
 
   .glam-slide-dragger {

@@ -480,10 +480,10 @@
   padding: 1em;
 }
 .glam-page .c-primary {
-  color: #ff6600;
+  color: #860070;
 }
 .glam-page .bg-primary {
-  background-color: #ff6600;
+  background-color: #860070;
   color: #fff;
 }
 .glam-page,
@@ -493,7 +493,7 @@
   box-sizing: border-box;
 }
 .glam-page a {
-  color: #ff6600;
+  color: #860070;
 }
 .glam-page a:not(:hover) {
   text-decoration: none;
@@ -525,7 +525,7 @@
 .glam-page h4,
 .glam-page h5 {
   font-family: "Linux Libertine", "Georgia", "Times", serif;
-  color: #ff6600;
+  color: #860070;
   line-height: 1.2;
   border-bottom: none;
   font-weight: normal;
@@ -626,7 +626,7 @@ body.skin-minerva .glam-page .glam-section {
   bottom: 0;
   right: 0;
   z-index: -1;
-  background-color: #ff6600;
+  background-color: #860070;
   transform-origin: 100% 12.5%;
   top: -100%;
   right: -66%;
@@ -647,7 +647,7 @@ body.skin-minerva .glam-page .glam-section {
 .glam-page .glam-header-slide-container {
   display: flex;
   width: 100%;
-  background-color: #ff6600;
+  background-color: #860070;
   font-family: "Linux Libertine", "Georgia", "Times", serif;
   overflow: hidden;
   font-size: 1.125rem;
@@ -667,7 +667,7 @@ body.skin-minerva .glam-page .glam-section {
   color: #fff;
 }
 .glam-page .glam-header-slide {
-  background-color: #ff6600;
+  background-color: #860070;
   overflow: hidden;
   position: relative;
   flex: 0 0 100%;
@@ -713,7 +713,7 @@ body.skin-minerva .glam-page .glam-section {
   bottom: 0;
   right: 0;
   z-index: -1;
-  background-color: #ff6600;
+  background-color: #860070;
   animation-name: slideOpenRight;
   transform-origin: 33% 0;
   top: 0;
@@ -908,7 +908,7 @@ body.skin-minerva .glam-page .glam-section {
   display: none;
 }
 .glam-page .glam-lang a {
-  color: #ff6600;
+  color: #860070;
 }
 .glam-page .glam-lang-anchor:target ~ .glam-navi-anchor .glam-navi-off {
   display: block;
@@ -1009,7 +1009,7 @@ body.skin-minerva .glam-page .glam-section {
   }
 }
 .glam-page .glam-navi a {
-  color: #ff6600;
+  color: #860070;
 }
 .glam-page .glam-navi > ul > li {
   padding: 0.5em 0;
@@ -1259,7 +1259,7 @@ body:not(.skin-minerva) .glam-page .toc.toc .toctitle .toctogglespan .toctogglel
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #ff6600;
+  background-color: #860070;
   transform-origin: 0 0;
   transform: translateX(-3em) skew(-30deg);
   z-index: -1;
