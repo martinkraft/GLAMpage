@@ -1,0 +1,27 @@
+{
+    "liveSassCompile.settings": {
+        "formats": [
+            {
+                "format": "expanded",
+                "extensionName": ".css",
+                "savePath": "/app/Template/GLAMpage/"
+            },
+            {
+                "format": "compressed",
+                "extensionName": ".min.css",
+                "savePath": "/app/Template/GLAMpage/.min"
+            }
+        ],
+        "includeItems": [
+            "/src/**/*.scss"
+        ],
+        "excludeList": [
+            "**/node_modules/**",
+            ".vscode/**"
+        ],
+        "autoprefix": false,
+        "generateMap": false,
+        "watchOnLaunch": true,
+        "compileOnWatch": true
+    }
+}
