@@ -514,6 +514,7 @@
 .glam-page .mw-ui-button.mw-ui-progressive:hover {
   background-color: #000;
   border-color: #000;
+  color: #fff;
   font-weight: 400;
   font-family: sans-serif;
 }
