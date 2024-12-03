@@ -37,28 +37,53 @@ $c-primary-neg: $c-primary !default;
       background-color: $c-bg;
     }
 
-    >:not(figcaption){
-       > .mw-file-element.mw-file-element {
-      margin: 0;
-      border: none;
-      display: block;
-      max-width: 100%;
-      width: 100%;
-    }
-    >.mw-tmh-player {
-      margin:0;
-      video{
-        margin:0;
-        width:100%;
-        height:auto;
+    >:not(figcaption) {
+      >.mw-file-element.mw-file-element {
+        margin: 0;
         border: none;
+        display: block;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      >.mw-tmh-player {
+        margin: 0;
+
+        video {
+          margin: 0;
+          width: 100%;
+          height: auto;
+          border: none;
+        }
       }
     }
-  }
 
     >figcaption {
       padding: .3em .5em .5em;
       hyphens: auto;
+    }
+  }
+
+  ol {
+    margin-left: 1.6em;
+    counter-reset: count 0;
+
+    &>li {
+      counter-increment: count 1;
+
+      &::marker {
+        color: $c-primary;
+        content: counter(count, decimal) ' ';
+      }
+    }
+  }
+  ul{
+    margin-left: 1.6em;
+    &>li {
+      &::marker {
+        color: $c-primary;
+        content: '🡢 '; // "🞂🢒 ";
+      }
     }
   }
 
@@ -194,7 +219,7 @@ $c-primary-neg: $c-primary !default;
 
       figure[typeof~="mw:File/Thumb"],
       figure[typeof~="mw:File/Frame"] {
-        >*{
+        >* {
           background-color: $c-white;
         }
       }
@@ -967,6 +992,10 @@ $c-primary-neg: $c-primary !default;
 .glam-infoline {
   font-size: $font-size;
   line-height: 1.1;
+
+  // to fix visibility probleme on White Background Pages
+  position: relative;
+  z-index: 1;
 
   >span {
     display: inline-block;

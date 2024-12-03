@@ -420,6 +420,24 @@
   padding: 0.3em 0.5em 0.5em;
   hyphens: auto;
 }
+.glam-page ol {
+  margin-left: 1.6em;
+  counter-reset: count 0;
+}
+.glam-page ol > li {
+  counter-increment: count 1;
+}
+.glam-page ol > li::marker {
+  color: #0088b9;
+  content: counter(count, decimal) " ";
+}
+.glam-page ul {
+  margin-left: 1.6em;
+}
+.glam-page ul > li::marker {
+  color: #0088b9;
+  content: "🡢 ";
+}
 .glam-page .c-pink {
   color: #e4007e;
 }
@@ -1244,6 +1262,8 @@ body:not(.skin-minerva) .glam-page .toc.toc .toctitle .toctogglespan .toctogglel
 .glam-infoline {
   font-size: 1rem;
   line-height: 1.1;
+  position: relative;
+  z-index: 1;
 }
 .glam-infoline > span {
   display: inline-block;
